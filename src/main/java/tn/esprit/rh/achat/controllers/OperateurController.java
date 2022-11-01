@@ -50,7 +50,9 @@ public class OperateurController {
 	// http://localhost:8089/SpringMVC/operateur/modify-operateur
 	@PutMapping("/modify-operateur")
 	@ResponseBody
-	public Operateur modifyOperateur(@RequestBody Operateur operateur) {
+	public Operateur modifyOperateur(@RequestBody DtoOperateur op) {
+		Operateur operateur = new Operateur(op.getNom(),op.getPrenom(),op.getPassword());
+
 		return operateurService.updateOperateur(operateur);
 	}
 
