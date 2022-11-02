@@ -6,6 +6,7 @@ target/
 achat.iml
 mvnw
 mvnw.cmd
+.mvn/wrapper
 
 ### STS ###
 .apt_generated
