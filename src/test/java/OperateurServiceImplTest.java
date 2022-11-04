@@ -1,23 +1,18 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-import org.junit.Test;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import tn.esprit.rh.achat.AchatApplication;
 import tn.esprit.rh.achat.entities.Operateur;
-import tn.esprit.rh.achat.repositories.OperateurRepository;
 import tn.esprit.rh.achat.services.IOperateurService;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)

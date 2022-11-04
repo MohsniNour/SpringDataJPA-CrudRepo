@@ -16,7 +16,7 @@ import tn.esprit.rh.achat.services.ISecteurActiviteService;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest(classes = AchatApplication.class)
 @RunWith(SpringRunner.class)
-public class secteurServiceImplTest {
+public class SecteurServiceImplTest {
 	
 	 @Autowired
 	    ISecteurActiviteService sas;
