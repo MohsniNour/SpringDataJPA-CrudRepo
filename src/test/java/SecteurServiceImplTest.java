@@ -57,7 +57,7 @@ public class SecteurServiceImplTest {
 
 	    @Test
 	    @Order(5)
-	    public void testdeleteOperateur(){
+	    public void testdeleteSecteur(){
 	    	SecteurActivite sa = sas.addSecteurActivite(SecteurActivite.builder()
 		               .codeSecteurActivite("code122secteur")
 		               .libelleSecteurActivite("sect122")
@@ -72,7 +72,7 @@ public class SecteurServiceImplTest {
 
 	    @Test
 	    @Order(4)
-	    public void tesupdateOperateur(){
+	    public void tesupdateSecteur(){
 	    	SecteurActivite sa = sas.addSecteurActivite(SecteurActivite.builder()
 		               .codeSecteurActivite("code123secteur")
 		               .libelleSecteurActivite("sect123")
