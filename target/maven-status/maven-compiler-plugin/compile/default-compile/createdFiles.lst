@@ -21,6 +21,7 @@ tn\esprit\rh\achat\controllers\FournisseurRestController.class
 tn\esprit\rh\achat\repositories\StockRepository.class
 tn\esprit\rh\achat\controllers\CategorieProduitController.class
 tn\esprit\rh\achat\dto\DtoStock.class
+tn\esprit\rh\achat\entities\Fournisseur$FournisseurBuilder.class
 tn\esprit\rh\achat\entities\CategorieProduit.class
 tn\esprit\rh\achat\repositories\DetailFournisseurRepository.class
 tn\esprit\rh\achat\services\IFournisseurService.class

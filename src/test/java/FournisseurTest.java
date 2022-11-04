@@ -2,7 +2,6 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
-import org.junit.Test;
 
 
 import tn.esprit.rh.achat.AchatApplication;
@@ -12,6 +11,7 @@ import tn.esprit.rh.achat.repositories.FournisseurRepository;
 import tn.esprit.rh.achat.entities.CategorieFournisseur;
 import tn.esprit.rh.achat.services.IFournisseurService;
 
+import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
