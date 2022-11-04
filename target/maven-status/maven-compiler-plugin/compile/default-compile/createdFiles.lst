@@ -1,3 +1,4 @@
+tn\esprit\rh\achat\dto\DtoFacture.class
 tn\esprit\rh\achat\repositories\OperateurRepository.class
 tn\esprit\rh\achat\repositories\SecteurActiviteRepository.class
 tn\esprit\rh\achat\services\FournisseurServiceImpl.class
@@ -23,10 +24,13 @@ tn\esprit\rh\achat\repositories\StockRepository.class
 tn\esprit\rh\achat\controllers\CategorieProduitController.class
 tn\esprit\rh\achat\dto\DtoStock.class
 tn\esprit\rh\achat\entities\Fournisseur$FournisseurBuilder.class
+tn\esprit\rh\achat\dto\DtoSecteurActivite.class
 tn\esprit\rh\achat\entities\CategorieProduit.class
 tn\esprit\rh\achat\repositories\DetailFournisseurRepository.class
 tn\esprit\rh\achat\services\IFournisseurService.class
+tn\esprit\rh\achat\dto\DtoReglement.class
 tn\esprit\rh\achat\entities\Stock.class
+tn\esprit\rh\achat\dto\DtoDetailFournisseur.class
 tn\esprit\rh\achat\services\FactureServiceImpl.class
 tn\esprit\rh\achat\services\ReglementServiceImpl.class
 tn\esprit\rh\achat\services\SecteurActiviteServiceImpl.class
@@ -34,12 +38,16 @@ tn\esprit\rh\achat\repositories\FactureRepository.class
 tn\esprit\rh\achat\repositories\ReglementRepository.class
 tn\esprit\rh\achat\controllers\StockRestController.class
 tn\esprit\rh\achat\repositories\ProduitRepository.class
+tn\esprit\rh\achat\dto\DtoDetailFacture.class
 tn\esprit\rh\achat\controllers\ProduitRestController.class
+tn\esprit\rh\achat\dto\DtoProduit.class
 tn\esprit\rh\achat\controllers\OperateurController.class
 tn\esprit\rh\achat\services\CategorieProduitServiceImpl.class
+tn\esprit\rh\achat\dto\DtoCategorieProduit.class
 tn\esprit\rh\achat\entities\SecteurActivite.class
 tn\esprit\rh\achat\services\StockServiceImpl.class
 tn\esprit\rh\achat\services\IOperateurService.class
+tn\esprit\rh\achat\dto\DtoFournisseur.class
 tn\esprit\rh\achat\services\IFactureService.class
 tn\esprit\rh\achat\controllers\FactureRestController.class
 tn\esprit\rh\achat\entities\Facture.class

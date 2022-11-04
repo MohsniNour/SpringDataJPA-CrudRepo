@@ -12,6 +12,7 @@ C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main
 C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\controllers\ProduitRestController.java
 C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\util\SpringFoxSwaggerConfig.java
 C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\services\IStockService.java
+C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoDetailFacture.java
 C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoProduit.java
 C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\controllers\ReglementRestController.java
 C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\services\IOperateurService.java
@@ -20,14 +21,19 @@ C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main
 C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\repositories\DetailFournisseurRepository.java
 C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\services\ProduitServiceImpl.java
 C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\controllers\CategorieProduitController.java
+C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoDetailFournisseur.java
 C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\services\IFactureService.java
 C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoSecteurActivite.java
 C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\services\SecteurActiviteServiceImpl.java
+C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoCategorieProduit.java
 C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\entities\SecteurActivite.java
+C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoFournisseur.java
 C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\repositories\FournisseurRepository.java
 C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\entities\DetailFournisseur.java
 C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\repositories\StockRepository.java
+C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoReglement.java
 C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\entities\Facture.java
+C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoFacture.java
 C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\controllers\FournisseurRestController.java
 C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\repositories\CategorieProduitRepository.java
 C:\Users\noure\OneDrive\Desktop\5ème Twin\Devops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\services\ISecteurActiviteService.java

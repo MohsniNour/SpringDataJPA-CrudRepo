@@ -33,5 +33,12 @@ public class SecteurActivite implements Serializable{
 	@ManyToMany(mappedBy=&quot;secteurActivites&quot;)
 	@JsonIgnore
 <span class="nc" id="L35">	private Set&lt;Fournisseur&gt; fournisseurs;</span>
+	public SecteurActivite(String codeSecteurActivite, String libelleSecteurActivite) {
+<span class="nc" id="L37">		super();</span>
+<span class="nc" id="L38">		this.codeSecteurActivite = codeSecteurActivite;</span>
+<span class="nc" id="L39">		this.libelleSecteurActivite = libelleSecteurActivite;</span>
+<span class="nc" id="L40">	}</span>
+	
+	
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
