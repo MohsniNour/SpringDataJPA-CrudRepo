@@ -1,6 +1,4 @@
 Manifest-Version: 1.0
-Built-By: noure
-Build-Jdk: 17.0.1
 Implementation-Title: achat
 Implementation-Version: 1.0
 Built-By: user
