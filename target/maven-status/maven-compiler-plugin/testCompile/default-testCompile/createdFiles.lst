@@ -1,7 +1,10 @@
 OperateurServiceMockito$1.class
+StockServiceMockito$1.class
 SecteurServiceMockito.class
 FournisseurTest.class
 OperateurServiceMockito.class
 OperateurServiceImplTest.class
+StockServiceMockito.class
+StockServiceImplTest.class
 SecteurServiceImplTest.class
 SecteurServiceMockito$1.class

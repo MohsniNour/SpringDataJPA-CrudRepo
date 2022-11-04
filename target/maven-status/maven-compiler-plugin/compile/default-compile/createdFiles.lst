@@ -15,6 +15,7 @@ tn\esprit\rh\achat\AchatApplication.class
 tn\esprit\rh\achat\services\ProduitServiceImpl.class
 tn\esprit\rh\achat\services\ISecteurActiviteService.class
 tn\esprit\rh\achat\services\IProduitService.class
+tn\esprit\rh\achat\entities\Stock$StockBuilder.class
 tn\esprit\rh\achat\entities\CategorieFournisseur.class
 tn\esprit\rh\achat\repositories\FournisseurRepository.class
 tn\esprit\rh\achat\controllers\FournisseurRestController.class
