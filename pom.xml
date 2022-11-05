@@ -27,13 +27,26 @@
 		<sonar.language>java</sonar.language>
 	</properties>
 	<dependencies>
-		<dependency>
+	<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
 		</dependency>
 
 		<dependency>
@@ -62,12 +75,13 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>3.0.0</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/junit/junit -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
+	<dependency>
+			<groupId>org.jacoco</groupId>
+			<artifactId>org.jacoco.agent</artifactId>
+			<version>0.8.7</version>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
 	
 		<dependency>
 
@@ -84,7 +98,10 @@
 		</dependency>
 
 
+=======
+>>>>>>> 8dfa757613faff8abaf652a19984e331c639e215
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -93,6 +110,7 @@
 				<version>3.1.0</version>
 			</plugin>
 			<plugin>
+
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
@@ -104,25 +122,37 @@
 					</excludes>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.6</version>
-				<executions>
-					<execution>
-						<id>prepare-agent</id>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>report</id>
-						<goals>
-							<goal>report</goal>
-						</goals>
-					</execution>
-				</executions>
+				<configuration>
+			
+					<destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>
+					<dataFile>${basedir}/target/coverage-reports/jacoco-unit.exec</dataFile>		
+					<output>file</output>
+					<append>true</append>
+			
+			<excludes>
+			<exclude>*MethodAccess</exclude>
+			</excludes>
+			</configuration>
+			<executions>
+				<execution>
+					<id>jacoco-initialize</id>
+					<goals>
+						<goal>prepare-agent</goal>
+					</goals>
+			<phase>test-compile</phase>
+			</execution>
+			<execution>
+			<id>jacoco-site</id>
+			<phase>verify</phase>
+			<goals>
+			<goal>report</goal>
+			</goals>
+			</execution>
+			</executions>
 			</plugin>
 		</plugins>
 	</build>

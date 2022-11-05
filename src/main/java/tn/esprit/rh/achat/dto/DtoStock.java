@@ -1,10 +1,8 @@
 package tn.esprit.rh.achat.dto;
 
 import java.util.Set;
-
 import lombok.Getter;
 import lombok.Setter;
-import tn.esprit.rh.achat.entities.Facture;
 import tn.esprit.rh.achat.entities.Produit;
 @Getter
 @Setter
