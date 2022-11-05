@@ -43,6 +43,18 @@ public class Facture implements Serializable {
     @OneToMany(mappedBy=&quot;facture&quot;)
     @JsonIgnore
 <span class="nc" id="L45">    private Set&lt;Reglement&gt; reglements;</span>
+    
+	public Facture(float montantRemise, float montantFacture, Date dateCreationFacture,
+			Date dateDerniereModificationFacture, Boolean archivee) {
+<span class="nc" id="L49">		super();</span>
+<span class="nc" id="L50">		this.montantRemise = montantRemise;</span>
+<span class="nc" id="L51">		this.montantFacture = montantFacture;</span>
+<span class="nc" id="L52">		this.dateCreationFacture = dateCreationFacture;</span>
+<span class="nc" id="L53">		this.dateDerniereModificationFacture = dateDerniereModificationFacture;</span>
+<span class="nc" id="L54">		this.archivee = archivee;</span>
+<span class="nc" id="L55">	}</span>
+    
+    
 
 	
 }
