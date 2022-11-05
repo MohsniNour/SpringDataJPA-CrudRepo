@@ -2,15 +2,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import tn.esprit.rh.achat.AchatApplication;
@@ -85,7 +85,7 @@ public class SecteurServiceMockito {
 	 }
 
 	 @Test
-	 public void testdeleteOperateur() {
+	 public void testdeleteSecteur() {
 		 SecteurActivite sa2 = SecteurActivite.builder().codeSecteurActivite("code12secteur").libelleSecteurActivite("sect12").build();
 		 saService.deleteSecteurActivite(sa2.getIdSecteurActivite());
 	     Mockito.verify(saRepositoryMock).deleteById(sa2.getIdSecteurActivite());

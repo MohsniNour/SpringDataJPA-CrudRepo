@@ -7,7 +7,10 @@ C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\m
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoStock.java
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\services\ProduitServiceImpl.java
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\AchatApplication.java
+C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoFournisseur.java
+C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoDetailFacture.java
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\repositories\ProduitRepository.java
+C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoProduit.java
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\entities\DetailFournisseur.java
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\controllers\ProduitRestController.java
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\entities\SecteurActivite.java
@@ -15,9 +18,13 @@ C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\m
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\services\IFactureService.java
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoOperateur.java
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\services\IReglementService.java
+C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoCategorieProduit.java
+C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoDetailFournisseur.java
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\entities\Stock.java
+C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoFacture.java
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\services\IOperateurService.java
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\repositories\SecteurActiviteRepository.java
+C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoSecteurActivite.java
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\controllers\FactureRestController.java
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\entities\Reglement.java
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\repositories\StockRepository.java
@@ -32,6 +39,7 @@ C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\m
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\controllers\SecteurActiviteController.java
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\services\IFournisseurService.java
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\services\OperateurServiceImpl.java
+C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoReglement.java
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\controllers\FournisseurRestController.java
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\controllers\OperateurController.java
 C:\EveryThingHere\ESPRIT\5 TWIN\devOps\projetdevops\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\entities\Fournisseur.java
