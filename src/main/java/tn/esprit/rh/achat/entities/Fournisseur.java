@@ -21,9 +21,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
+@Builder
 @Getter
 @Setter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class Fournisseur implements Serializable {
@@ -45,6 +45,15 @@ public class Fournisseur implements Serializable {
     private Set<SecteurActivite> secteurActivites;
     @OneToOne(cascade= CascadeType.ALL,fetch=FetchType.EAGER)
     private DetailFournisseur detailFournisseur;
+	public Fournisseur(String code, String libelle) {
+		super();
+		this.code = code;
+		this.libelle = libelle;
+	}
+	
+	
+    
+    
     
 
 	
