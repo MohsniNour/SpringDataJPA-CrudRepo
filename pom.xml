@@ -81,7 +81,6 @@
 			<version>0.8.7</version>
 			<scope>test</scope>
 		</dependency>
-<<<<<<< HEAD
 	
 		<dependency>
 
@@ -98,8 +97,7 @@
 		</dependency>
 
 
-=======
->>>>>>> 8dfa757613faff8abaf652a19984e331c639e215
+
 	</dependencies>
 
 	<build>
