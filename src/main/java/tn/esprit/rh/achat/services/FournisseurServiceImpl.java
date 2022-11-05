@@ -12,6 +12,7 @@ import tn.esprit.rh.achat.repositories.ProduitRepository;
 import tn.esprit.rh.achat.repositories.SecteurActiviteRepository;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -77,8 +78,9 @@ public class FournisseurServiceImpl implements IFournisseurService {
 		try {
 		Fournisseur fournisseur = fournisseurRepository.findById(idFournisseur).orElse(null);
 		SecteurActivite secteurActivite = secteurActiviteRepository.findById(idSecteurActivite).orElse(null);
-		Set<SecteurActivite> secteurActivites = fournisseur.getSecteurActivites();
-		if (secteurActivites.size()!=0) {
+		Set<SecteurActivite> secteurActivites = new HashSet<SecteurActivite>();
+		secteurActivites=fournisseur.getSecteurActivites();
+		if (!secteurActivites.isEmpty()) {
 		secteurActivites.add(secteurActivite);
         fournisseurRepository.save(fournisseur);
 		}

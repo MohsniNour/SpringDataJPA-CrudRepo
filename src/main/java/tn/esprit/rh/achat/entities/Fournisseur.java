@@ -50,6 +50,8 @@ public class Fournisseur implements Serializable {
 		this.code = code;
 		this.libelle = libelle;
 	}
+	
+	
     
     
     
