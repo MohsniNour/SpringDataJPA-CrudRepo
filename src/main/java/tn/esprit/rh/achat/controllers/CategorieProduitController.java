@@ -5,9 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.rh.achat.entities.CategorieProduit;
 import tn.esprit.rh.achat.dto.DtoCategorieProduit;
-import tn.esprit.rh.achat.dto.DtoSecteurActivite;
-import tn.esprit.rh.achat.entities.CategorieProduit;
-import tn.esprit.rh.achat.entities.SecteurActivite;
 import tn.esprit.rh.achat.services.ICategorieProduitService;
 
 import java.util.List;
@@ -21,12 +18,13 @@ public class CategorieProduitController {
 	ICategorieProduitService categorieProduitService;
 	
 	// http://localhost:8089/SpringMVC/categorieProduit/retrieve-all-categorieProduit
-	@GetMapping("/retrieve-all-categorieProduit")
-	@ResponseBody
-	public List<CategorieProduit> getCategorieProduit() {
-		List<CategorieProduit> list = categorieProduitService.retrieveAllCategorieProduits();
-		return list;
-	}
+		@GetMapping("/retrieve-all-categorieProduit")
+		@ResponseBody
+		public List<CategorieProduit> getCategorieProduit() {
+			return categorieProduitService.retrieveAllCategorieProduits();
+
+		}
+
 
 	// http://localhost:8089/SpringMVC/categorieProduit/retrieve-categorieProduit/8
 	@GetMapping("/retrieve-categorieProduit/{categorieProduit-id}")
@@ -43,7 +41,6 @@ public class CategorieProduitController {
 		return	categorieProduitService.addCategorieProduit(categorieProduit);
 	}
 
-	// http://localhost:8089/SpringMVC/categorieProduit/remove-categorieProduit/{categorieProduit-id}
 	@DeleteMapping("/remove-categorieProduit/{categorieProduit-id}")
 	@ResponseBody
 	public void removeCategorieProduit(@PathVariable("categorieProduit-id") Long categorieProduitId) {
