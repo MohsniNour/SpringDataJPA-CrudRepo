@@ -86,6 +86,11 @@
 	<build>
 		<plugins>
 			<plugin>
+  				<groupId>org.sonarsource.scanner.maven</groupId>
+  				<artifactId>sonar-maven-plugin</artifactId>
+  				<version>3.7.0.1746</version>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>3.1.0</version>
@@ -114,26 +119,42 @@
 					<output>file</output>
 					<append>true</append>
 			
-			<excludes>
-			<exclude>*MethodAccess</exclude>
-			</excludes>
-			</configuration>
-			<executions>
-				<execution>
-					<id>jacoco-initialize</id>
-					<goals>
-						<goal>prepare-agent</goal>
-					</goals>
-			<phase>test-compile</phase>
-			</execution>
-			<execution>
-			<id>jacoco-site</id>
-			<phase>verify</phase>
-			<goals>
-			<goal>report</goal>
-			</goals>
-			</execution>
-			</executions>
+					<excludes>
+						<exclude>*MethodAccess</exclude>
+						</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<id>jacoco-initialize</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+						<phase>test-compile</phase>
+					</execution>
+					<execution>
+						<id>jacoco-site</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+					
+					<execution>
+          				<id>prepare-agent</id>
+          				<goals>
+             				<goal>prepare-agent</goal>
+          				</goals>
+          				<phase>test-compile</phase>
+      				</execution>
+      				<execution>
+          				<id>report</id>
+          				<goals>
+             			<goal>report</goal>
+          				</goals>
+          				<phase>test</phase>
+      				</execution>
+					
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
