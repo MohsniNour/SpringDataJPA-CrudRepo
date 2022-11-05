@@ -75,8 +75,9 @@
 	    </dependency>
 	<dependency>
 			<groupId>org.jacoco</groupId>
-			<artifactId>jacoco-maven-plugin</artifactId>
+			<artifactId>org.jacoco.agent</artifactId>
 			<version>0.8.7</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
