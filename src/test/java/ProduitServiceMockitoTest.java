@@ -22,7 +22,7 @@ import tn.esprit.rh.achat.services.ProduitServiceImpl;
 @SpringBootTest(classes = AchatApplication.class)
 @ExtendWith(MockitoExtension.class)
 @RunWith(MockitoJUnitRunner.class)
-public class ProduitServiceMockito {
+public class ProduitServiceMockitoTest {
 	 @Mock
 	 ProduitRepository produitRepositoryMock;
 	 @InjectMocks
