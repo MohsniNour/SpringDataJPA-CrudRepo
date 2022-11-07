@@ -3,9 +3,7 @@ package tn.esprit.rh.achat.controllers;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import tn.esprit.rh.achat.dto.DtoOperateur;
 import tn.esprit.rh.achat.dto.DtoSecteurActivite;
-import tn.esprit.rh.achat.entities.Operateur;
 import tn.esprit.rh.achat.entities.SecteurActivite;
 import tn.esprit.rh.achat.services.ISecteurActiviteService;
 
@@ -21,12 +19,12 @@ public class SecteurActiviteController {
 	ISecteurActiviteService secteurActiviteService;
 	
 	// http://localhost:8089/SpringMVC/secteurActivite/retrieve-all-secteurActivite
-	@GetMapping("/retrieve-all-secteurActivite")
-	@ResponseBody
-	public List<SecteurActivite> getSecteurActivite() {
-		List<SecteurActivite> list = secteurActiviteService.retrieveAllSecteurActivite();
-		return list;
-	}
+		@GetMapping("/retrieve-all-secteurActivite")
+		@ResponseBody
+		public List<SecteurActivite> getSecteurActivite() {
+			return secteurActiviteService.retrieveAllSecteurActivite();
+
+		}
 
 	// http://localhost:8089/SpringMVC/secteurActivite/retrieve-secteurActivite/8
 	@GetMapping("/retrieve-secteurActivite/{secteurActivite-id}")
@@ -43,7 +41,6 @@ public class SecteurActiviteController {
 		return secteurActiviteService.addSecteurActivite(secteur);
 	}
 
-	// http://localhost:8089/SpringMVC/secteurActivite/remove-secteurActivite/{secteurActivite-id}
 	@DeleteMapping("/remove-secteurActivite/{secteurActivite-id}")
 	@ResponseBody
 	public void removeSecteurActivite(@PathVariable("secteurActivite-id") Long secteurActiviteId) {
