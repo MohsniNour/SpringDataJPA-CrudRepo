@@ -19,12 +19,12 @@ public class StockRestController {
 	@Autowired
 	IStockService stockService;
 
+
 	// http://localhost:8089/SpringMVC/stock/retrieve-all-stocks
 	@GetMapping("/retrieve-all-stocks")
 	@ResponseBody
 	public List<Stock> getStocks() {
-		List<Stock> list = stockService.retrieveAllStocks();
-		return list;
+		return stockService.retrieveAllStocks();
 	}
 
 	// http://localhost:8089/SpringMVC/stock/retrieve-stock/8
@@ -42,7 +42,6 @@ public class StockRestController {
 		return stockService.addStock(stock);
 	}
 
-	// http://localhost:8089/SpringMVC/stock/remove-stock/{stock-id}
 	@DeleteMapping("/remove-stock/{stock-id}")
 	@ResponseBody
 	public void removeStock(@PathVariable("stock-id") Long stockId) {

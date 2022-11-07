@@ -10,8 +10,8 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import tn.esprit.rh.achat.AchatApplication;
@@ -19,9 +19,8 @@ import tn.esprit.rh.achat.entities.Stock;
 import tn.esprit.rh.achat.repositories.StockRepository;
 import tn.esprit.rh.achat.services.StockServiceImpl;
 
-
+@ExtendWith(MockitoExtension.class)
 @SpringBootTest(classes = AchatApplication.class)
-@RunWith(MockitoJUnitRunner.class)
 public class StockServiceMockitoTest {
 
 	@Mock
@@ -94,4 +93,3 @@ public class StockServiceMockitoTest {
 
 	 }
 }
-
