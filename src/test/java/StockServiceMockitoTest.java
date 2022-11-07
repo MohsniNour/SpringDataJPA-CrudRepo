@@ -23,7 +23,7 @@ import tn.esprit.rh.achat.services.StockServiceImpl;
 @SpringBootTest(classes = AchatApplication.class)
 @ExtendWith(MockitoExtension.class)
 @RunWith(MockitoJUnitRunner.class)
-public class StockServiceMockito {
+public class StockServiceMockitoTest {
 
 	@Mock
 	 StockRepository stockRepositoryMock;

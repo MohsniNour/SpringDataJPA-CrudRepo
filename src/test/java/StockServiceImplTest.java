@@ -1,4 +1,4 @@
-import java.util.List;
+/*import java.util.List;
 
 
 import org.junit.jupiter.api.Assertions;
@@ -74,7 +74,7 @@ public class StockServiceImplTest {
 
 	    }
 	    
-	    /*@Test
+	    @Test
 	    @Order(4)
 	    public void tesupdateOperateur(){
 	    	Stock s = ss.addStock(Stock.builder()
@@ -88,5 +88,6 @@ public class StockServiceImplTest {
 			System.out.println("update junit !");
 
 
-	    }*/
+	    }
 }
+*/
