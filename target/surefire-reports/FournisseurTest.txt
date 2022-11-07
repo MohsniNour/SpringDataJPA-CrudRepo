@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: FournisseurTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 34.229 s - in FournisseurTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 24.642 s - in FournisseurTest
