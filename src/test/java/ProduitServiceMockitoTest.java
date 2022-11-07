@@ -5,12 +5,10 @@ import java.util.Optional;
 import org.mockito.Mock;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import tn.esprit.rh.achat.AchatApplication;
@@ -19,9 +17,8 @@ import tn.esprit.rh.achat.repositories.ProduitRepository;
 import tn.esprit.rh.achat.services.ProduitServiceImpl;
 
 
-@SpringBootTest(classes = AchatApplication.class)
-@ExtendWith(MockitoExtension.class)
 @RunWith(MockitoJUnitRunner.class)
+@SpringBootTest(classes = AchatApplication.class)
 public class ProduitServiceMockitoTest {
 	 @Mock
 	 ProduitRepository produitRepositoryMock;
@@ -42,7 +39,7 @@ public class ProduitServiceMockitoTest {
 	 };
 	 
 	@Test
-	void testretrieveAllProduits() {
+	public void testretrieveAllProduits() {
 		 Mockito.when(produitRepositoryMock.findAll()).thenReturn(listOperateurs);
 	     List<Produit> listOp = produitService.retrieveAllProduits();
 	     Assertions.assertNotNull(listOp);
@@ -52,7 +49,7 @@ public class ProduitServiceMockitoTest {
 	}
 
 	@Test
-	void testretrieveProduit() {
+	public void testretrieveProduit() {
 		Mockito.when(produitRepositoryMock.findById(Mockito.anyLong())).thenReturn(Optional.of(op)); //find all
 	    Produit op1 = produitService.retrieveProduit(2L);
 	    Assertions.assertNotNull(op1);
@@ -60,7 +57,7 @@ public class ProduitServiceMockitoTest {
 	}
 
 	@Test
-	void testaddProduit() {
+	public void testaddProduit() {
 		 Mockito.when(produitRepositoryMock.save(op)).thenReturn(op);
 		 Produit op1 = produitService.addProduit(op);
 	     Assertions.assertNotNull(op1);
@@ -69,7 +66,7 @@ public class ProduitServiceMockitoTest {
 	}
 
 	@Test
-	void testdeleteProduit() {
+	public void testdeleteProduit() {
 		Produit op2 = Produit.builder().codeProduit("999").libelleProduit("Selma").prix(900f).build();
 	     produitService.deleteProduit(op2.getIdProduit());
 	     Mockito.verify(produitRepositoryMock).deleteById(op2.getIdProduit());
@@ -78,7 +75,7 @@ public class ProduitServiceMockitoTest {
 	}
 
 	@Test
-	void testupdateProduit() {
+	public void testupdateProduit() {
 		op.setLibelleProduit("khalil");
 	     Mockito.when(produitRepositoryMock.save(op)).thenReturn(op);
 	     Produit op1 = produitService.updateProduit(op);

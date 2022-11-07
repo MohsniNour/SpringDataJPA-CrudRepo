@@ -11,7 +11,6 @@ tn\esprit\rh\achat\entities\Fournisseur.class
 tn\esprit\rh\achat\controllers\SecteurActiviteController.class
 tn\esprit\rh\achat\services\IReglementService.class
 tn\esprit\rh\achat\services\IStockService.class
-META-INF\MANIFEST.MF
 tn\esprit\rh\achat\services\ICategorieProduitService.class
 tn\esprit\rh\achat\AchatApplication.class
 tn\esprit\rh\achat\services\ProduitServiceImpl.class
@@ -20,7 +19,6 @@ tn\esprit\rh\achat\services\IProduitService.class
 tn\esprit\rh\achat\entities\Stock$StockBuilder.class
 tn\esprit\rh\achat\entities\CategorieFournisseur.class
 tn\esprit\rh\achat\repositories\FournisseurRepository.class
-META-INF\maven\tn.esprit.rh\achat\pom.xml
 tn\esprit\rh\achat\controllers\FournisseurRestController.class
 tn\esprit\rh\achat\repositories\StockRepository.class
 tn\esprit\rh\achat\controllers\CategorieProduitController.class
@@ -58,7 +56,6 @@ tn\esprit\rh\achat\entities\Operateur.class
 tn\esprit\rh\achat\dto\DtoOperateur.class
 tn\esprit\rh\achat\entities\Produit$ProduitBuilder.class
 tn\esprit\rh\achat\entities\Operateur$OperateurBuilder.class
-META-INF\maven\tn.esprit.rh\achat\pom.properties
 tn\esprit\rh\achat\entities\DetailFacture.class
 tn\esprit\rh\achat\util\SpringFoxSwaggerConfig.class
 tn\esprit\rh\achat\entities\DetailFournisseur.class

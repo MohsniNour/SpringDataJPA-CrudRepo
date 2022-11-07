@@ -18,10 +18,8 @@ import tn.esprit.rh.achat.entities.SecteurActivite;
 import tn.esprit.rh.achat.repositories.SecteurActiviteRepository;
 import tn.esprit.rh.achat.services.SecteurActiviteServiceImpl;
 
-
-@SpringBootTest(classes = AchatApplication.class)
-@ExtendWith(MockitoExtension.class)
 @RunWith(MockitoJUnitRunner.class)
+@SpringBootTest(classes = AchatApplication.class)
 public class SecteurServiceMockitoTest {
 
 	@Mock
