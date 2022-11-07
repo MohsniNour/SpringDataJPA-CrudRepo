@@ -5,11 +5,13 @@ import java.util.Optional;
 import org.mockito.Mock;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import tn.esprit.rh.achat.AchatApplication;
 import tn.esprit.rh.achat.entities.Produit;
@@ -18,7 +20,7 @@ import tn.esprit.rh.achat.services.ProduitServiceImpl;
 
 
 @SpringBootTest(classes = AchatApplication.class)
-@ExtendWith(MockitoExtension.class)
+@RunWith(MockitoJUnitRunner.class)
 public class ProduitServiceMockitoTest {
 	 @Mock
 	 ProduitRepository produitRepositoryMock;
