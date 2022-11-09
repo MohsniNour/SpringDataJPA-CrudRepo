@@ -5,8 +5,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.mockito.InjectMocks;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -17,6 +18,7 @@ import tn.esprit.rh.achat.repositories.OperateurRepository;
 import tn.esprit.rh.achat.services.OperateurServiceImpl;
 
 @SpringBootTest(classes = AchatApplication.class)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @ExtendWith(MockitoExtension.class)
 
 public class OperateurServiceMockitoTest {

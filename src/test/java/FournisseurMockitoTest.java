@@ -3,20 +3,22 @@ import java.util.List;
 import java.util.Optional;
 import org.mockito.Mock;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.Assertions;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.MethodOrderer;
 import org.mockito.InjectMocks;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 import tn.esprit.rh.achat.AchatApplication; 
 import tn.esprit.rh.achat.entities.Fournisseur;
 import tn.esprit.rh.achat.repositories.FournisseurRepository;
 import tn.esprit.rh.achat.entities.CategorieFournisseur;
 import tn.esprit.rh.achat.services.FournisseurServiceImpl;
-
-@RunWith(MockitoJUnitRunner.class)
 @SpringBootTest(classes = AchatApplication.class)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@ExtendWith(MockitoExtension.class)
 public class FournisseurMockitoTest {
 
 
