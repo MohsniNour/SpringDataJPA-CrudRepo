@@ -51,10 +51,9 @@ public class FournisseurServiceImpl implements IFournisseurService {
 		detailFournisseurRepository.save(df);
 		return df;
 	}
-
+	
+	@Override
 	public Fournisseur updateFournisseur(Fournisseur f) {
-		DetailFournisseur df = saveDetailFournisseur(f);
-		f.setDetailFournisseur(df);	
 		fournisseurRepository.save(f);
 		return f;
 	}
