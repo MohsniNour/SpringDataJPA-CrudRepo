@@ -45,7 +45,7 @@ import java.util.List;
 <span class="fc" id="L45">		fournisseurRepository.save(f);</span>
 <span class="fc" id="L46">		return f;</span>
 	}
-	
+
 	private DetailFournisseur  saveDetailFournisseur(Fournisseur f){
 <span class="nc" id="L50">		DetailFournisseur df = f.getDetailFournisseur();</span>
 <span class="nc" id="L51">		detailFournisseurRepository.save(df);</span>
@@ -72,17 +72,21 @@ import java.util.List;
 <span class="fc" id="L72">		return fournisseur;</span>
 	}
 
+	
 	@Override
 	public void assignSecteurActiviteToFournisseur(Long idSecteurActivite, Long idFournisseur) {
-<span class="nc" id="L77">		Fournisseur fournisseur = fournisseurRepository.findById(idFournisseur).orElse(null);</span>
-<span class="nc" id="L78">		SecteurActivite secteurActivite = secteurActiviteRepository.findById(idSecteurActivite).orElse(null);</span>
-<span class="nc" id="L79">        fournisseur.getSecteurActivites().add(secteurActivite);</span>
-<span class="nc" id="L80">        fournisseurRepository.save(fournisseur);</span>
-		
-		
-<span class="nc" id="L83">	}</span>
+<span class="nc" id="L78">		Fournisseur fournisseur = fournisseurRepository.findById(idFournisseur).orElse(null);</span>
+<span class="nc" id="L79">		SecteurActivite secteurActivite = secteurActiviteRepository.findById(idSecteurActivite).orElse(null);</span>
+<span class="nc bnc" id="L80" title="All 2 branches missed.">		if(fournisseur != null) {</span>
 
-	
+<span class="nc" id="L82">			fournisseur.getSecteurActivites().add(secteurActivite);</span>
+
+<span class="nc" id="L84">			fournisseurRepository.save(fournisseur);</span>
+		}
+
+<span class="nc" id="L87">	}</span>
+
+
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

@@ -38,8 +38,8 @@ achat,tn.esprit.rh.achat.util,SpringFoxSwaggerConfig,0,80,0,0,0,22,0,6,0,6
 achat,tn.esprit.rh.achat.services,StockServiceImpl,74,98,2,2,13,22,2,8,1,7
 achat,tn.esprit.rh.achat.services,SecteurActiviteServiceImpl,0,37,0,0,0,10,0,6,0,6
 achat,tn.esprit.rh.achat.services,CategorieProduitServiceImpl,33,3,0,0,9,1,5,1,5,1
-achat,tn.esprit.rh.achat.services,ProduitServiceImpl,25,70,0,2,5,14,1,8,1,7
-achat,tn.esprit.rh.achat.services,OperateurServiceImpl,0,37,0,0,0,10,0,6,0,6
-achat,tn.esprit.rh.achat.services,FactureServiceImpl,206,7,4,0,39,2,10,2,8,2
-achat,tn.esprit.rh.achat.services,FournisseurServiceImpl,51,67,0,2,12,15,3,7,3,6
+achat,tn.esprit.rh.achat.services,ProduitServiceImpl,27,70,2,2,6,14,2,8,1,7
+achat,tn.esprit.rh.achat.services,OperateurServiceImpl,0,40,0,0,0,12,0,6,0,6
+achat,tn.esprit.rh.achat.services,FactureServiceImpl,221,12,13,1,42,2,15,2,8,2
+achat,tn.esprit.rh.achat.services,FournisseurServiceImpl,53,67,2,2,13,15,4,7,3,6
 achat,tn.esprit.rh.achat.services,ReglementServiceImpl,35,3,0,0,8,1,5,1,5,1

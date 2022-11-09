@@ -38,7 +38,7 @@ import java.util.List;
 <span class="fc" id="L38">		return p;</span>
 	}
 
-	
+
 
 	@Override
 	public void deleteProduit(Long produitId) {
@@ -61,10 +61,12 @@ import java.util.List;
 	public void assignProduitToStock(Long idProduit, Long idStock) {
 <span class="nc" id="L62">		Produit produit = produitRepository.findById(idProduit).orElse(null);</span>
 <span class="nc" id="L63">		Stock stock = stockRepository.findById(idStock).orElse(null);</span>
-<span class="nc" id="L64">		produit.setStock(stock);</span>
-<span class="nc" id="L65">		produitRepository.save(produit);</span>
+<span class="nc bnc" id="L64" title="All 2 branches missed.">		if(produit != null) {</span>
+<span class="nc" id="L65">			produit.setStock(stock);</span>
+<span class="nc" id="L66">			produitRepository.save(produit);</span>
+		}
 
-<span class="nc" id="L67">	}</span>
+<span class="nc" id="L69">	}</span>
 
 
 }
