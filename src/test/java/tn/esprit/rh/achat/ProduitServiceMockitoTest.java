@@ -1,4 +1,5 @@
 package tn.esprit.rh.achat;
+
 import lombok.extern.slf4j.Slf4j;
 import tn.esprit.rh.achat.entities.Produit;
 import tn.esprit.rh.achat.repositories.ProduitRepository;
@@ -23,7 +24,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @ExtendWith(MockitoExtension.class)
-public class ProduitServiceImplTest {
+public class ProduitServiceMockitoTest {
 @Mock
 ProduitRepository produitRepository;
 @InjectMocks
@@ -43,6 +44,44 @@ public void testRetrieveProduit() {
     Mockito.when(produitRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(p1));
     Produit produit1 = produitService.retrieveProduit(Long.valueOf("1"));
     Assertions.assertNotNull(produit1);
+}
+
+@Test
+public void testretrieveAllProduits() {
+	 Mockito.when(produitRepository.findAll()).thenReturn(listProduits);
+     List<Produit> listOp = produitService.retrieveAllProduits();
+     Assertions.assertNotNull(listOp);
+		System.out.println("woooorkiiiiing all retrieve !");
+
+
+}
+
+@Test
+public void testaddProduit() {
+	 Mockito.when(produitRepository.save(p1)).thenReturn(p1);
+	 Produit op1 = produitService.addProduit(p1);
+     Assertions.assertNotNull(op1);
+		System.out.println("woooorkiiiiing add !");
+
+}
+
+@Test
+public void testdeleteProduit() {
+	Produit op2 = Produit.builder().codeProduit("999").libelleProduit("Selma").prix(900f).build();
+     produitService.deleteProduit(op2.getIdProduit());
+     Mockito.verify(produitRepository).deleteById(op2.getIdProduit());
+		System.out.println("woooorkiiiiing delete !");
+
+}
+
+@Test
+public void testupdateProduit() {
+	p1.setLibelleProduit("khalil");
+     Mockito.when(produitRepository.save(p1)).thenReturn(p1);
+     Produit op1 = produitService.updateProduit(p1);
+     Assertions.assertEquals(p1.getLibelleProduit(),op1.getLibelleProduit());
+		System.out.println("woooorkiiiiing update !");
+
 }
 
 }
