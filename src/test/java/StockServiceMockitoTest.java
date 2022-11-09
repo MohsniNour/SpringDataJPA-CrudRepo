@@ -4,7 +4,9 @@ import java.util.Optional;
 
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -21,9 +23,9 @@ import tn.esprit.rh.achat.services.StockServiceImpl;
 
 
 @SpringBootTest(classes = AchatApplication.class)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @ExtendWith(MockitoExtension.class)
-@RunWith(MockitoJUnitRunner.class)
-public class StockServiceMockito {
+public class StockServiceMockitoTest {
 
 	@Mock
 	 StockRepository stockRepositoryMock;
