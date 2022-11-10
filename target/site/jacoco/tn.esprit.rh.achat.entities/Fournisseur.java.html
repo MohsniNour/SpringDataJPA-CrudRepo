@@ -15,15 +15,17 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-<span class="nc" id="L23">@Getter</span>
-<span class="nc" id="L24">@Setter</span>
-<span class="nc" id="L25">@AllArgsConstructor</span>
-<span class="fc" id="L26">@NoArgsConstructor</span>
+<span class="pc" id="L24">@Builder</span>
+<span class="pc" id="L25">@Getter</span>
+<span class="pc" id="L26">@Setter</span>
+<span class="fc" id="L27">@AllArgsConstructor</span>
+<span class="fc" id="L28">@NoArgsConstructor</span>
 public class Fournisseur implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -43,6 +45,15 @@ public class Fournisseur implements Serializable {
     private Set&lt;SecteurActivite&gt; secteurActivites;
     @OneToOne(cascade= CascadeType.ALL,fetch=FetchType.EAGER)
     private DetailFournisseur detailFournisseur;
+	public Fournisseur(String code, String libelle) {
+<span class="nc" id="L49">		super();</span>
+<span class="nc" id="L50">		this.code = code;</span>
+<span class="nc" id="L51">		this.libelle = libelle;</span>
+<span class="nc" id="L52">	}</span>
+	
+	
+    
+    
     
 
 	

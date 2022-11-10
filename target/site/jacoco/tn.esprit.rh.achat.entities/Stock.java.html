@@ -9,15 +9,17 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-<span class="nc" id="L17">@Getter</span>
-<span class="nc" id="L18">@Setter</span>
-<span class="nc" id="L19">@AllArgsConstructor</span>
-<span class="fc" id="L20">@NoArgsConstructor</span>
+<span class="pc" id="L18">@Builder</span>
+<span class="pc" id="L19">@Getter</span>
+<span class="pc" id="L20">@Setter</span>
+<span class="fc" id="L21">@AllArgsConstructor</span>
+<span class="fc" id="L22">@NoArgsConstructor</span>
 public class Stock implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -31,11 +33,11 @@ public class Stock implements Serializable {
 	@JsonIgnore
 	private Set&lt;Produit&gt; produits;
 	public Stock(String libelleStock, Integer qte, Integer qteMin) {
-<span class="nc" id="L34">		super();</span>
-<span class="nc" id="L35">		this.libelleStock = libelleStock;</span>
-<span class="nc" id="L36">		this.qte = qte;</span>
-<span class="nc" id="L37">		this.qteMin = qteMin;</span>
-<span class="nc" id="L38">	}</span>
+<span class="nc" id="L36">		super();</span>
+<span class="nc" id="L37">		this.libelleStock = libelleStock;</span>
+<span class="nc" id="L38">		this.qte = qte;</span>
+<span class="nc" id="L39">		this.qteMin = qteMin;</span>
+<span class="nc" id="L40">	}</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

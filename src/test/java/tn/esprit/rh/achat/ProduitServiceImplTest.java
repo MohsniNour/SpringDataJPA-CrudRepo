@@ -1,5 +1,8 @@
 package tn.esprit.rh.achat;
+
+
 import lombok.extern.slf4j.Slf4j;
+import tn.esprit.rh.achat.AchatApplication;
 import tn.esprit.rh.achat.entities.Produit;
 import tn.esprit.rh.achat.repositories.ProduitRepository;
 import tn.esprit.rh.achat.services.ProduitServiceImpl;
@@ -15,34 +18,75 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@Slf4j
-@SpringBootTest
+@SpringBootTest(classes = AchatApplication.class)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @ExtendWith(MockitoExtension.class)
 public class ProduitServiceImplTest {
-@Mock
-ProduitRepository produitRepository;
-@InjectMocks
-ProduitServiceImpl produitService;
-Produit p1=new Produit(12L,"123","prod1",(float)1200,null,null,null,null,null);
-List<Produit> listProduits=new ArrayList<Produit>(){
-	{
-	add(new Produit(13L,"123","prod2",(float)1200,null,null,null,null,null));
-	add(new Produit(14L,"123","prod3",(float)1200,null,null,null,null,null));
+	 @Mock
+	 ProduitRepository produitRepositoryMock;
+	 @InjectMocks
+	 ProduitServiceImpl produitService;
+	 
+	 
+	 Produit op = Produit.builder().codeProduit("999").libelleProduit("Selma").prix(900f).build();
+	 List<Produit> listOperateurs = new ArrayList<Produit>(){
+	     {
+	         add(Produit.builder().codeProduit("888").libelleProduit("Amira").prix(800f).build());
+	         add(Produit.builder().codeProduit("666").libelleProduit("nour").prix(600f).build());
+	         add(Produit.builder().codeProduit("522").libelleProduit("sab").prix(500f).build());
+	         add(Produit.builder().codeProduit("1000").libelleProduit("yass").prix(1000f).build());
+
+	     }
+
+	 };
+	 
+	@Test
+	public void testretrieveAllProduits() {
+		 Mockito.when(produitRepositoryMock.findAll()).thenReturn(listOperateurs);
+	     List<Produit> listOp = produitService.retrieveAllProduits();
+	     Assertions.assertNotNull(listOp);
+			System.out.println("woooorkiiiiing all retrieve !");
+
+
 	}
-	
-};
-@Test
-@Order(1)
-public void testRetrieveProduit() {
-   System.out.println("Mock1 TestRetrieveProduit");
-    Mockito.when(produitRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(p1));
-    Produit produit1 = produitService.retrieveProduit(Long.valueOf("1"));
-    Assertions.assertNotNull(produit1);
-}
+
+	@Test
+	public void testretrieveProduit() {
+		Mockito.when(produitRepositoryMock.findById(Mockito.anyLong())).thenReturn(Optional.of(op)); //find all
+	    Produit op1 = produitService.retrieveProduit(2L);
+	    Assertions.assertNotNull(op1);
+		System.out.println("woooorkiiiiing retrieve !");
+	}
+
+	@Test
+	public void testaddProduit() {
+		 Mockito.when(produitRepositoryMock.save(op)).thenReturn(op);
+		 Produit op1 = produitService.addProduit(op);
+	     Assertions.assertNotNull(op1);
+			System.out.println("woooorkiiiiing add !");
+
+	}
+
+	@Test
+	public void testdeleteProduit() {
+		Produit op2 = Produit.builder().codeProduit("999").libelleProduit("Selma").prix(900f).build();
+	     produitService.deleteProduit(op2.getIdProduit());
+	     Mockito.verify(produitRepositoryMock).deleteById(op2.getIdProduit());
+			System.out.println("woooorkiiiiing delete !");
+
+	}
+
+	@Test
+	public void testupdateProduit() {
+		op.setLibelleProduit("khalil");
+	     Mockito.when(produitRepositoryMock.save(op)).thenReturn(op);
+	     Produit op1 = produitService.updateProduit(op);
+	     Assertions.assertEquals(op.getLibelleProduit(),op1.getLibelleProduit());
+			System.out.println("woooorkiiiiing update !");
+
+	}
 
 }

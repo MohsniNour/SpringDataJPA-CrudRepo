@@ -13,17 +13,18 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-<span class="nc" id="L21">@Getter</span>
-<span class="nc" id="L22">@Setter</span>
-<span class="fc" id="L23">@AllArgsConstructor</span>
-<span class="fc" id="L24">@NoArgsConstructor</span>
+<span class="pc" id="L22">@Getter</span>
+<span class="pc" id="L23">@Setter</span>
+<span class="pc" id="L24">@Builder</span>
+<span class="fc" id="L25">@AllArgsConstructor</span>
+<span class="fc" id="L26">@NoArgsConstructor</span>
 public class Produit implements Serializable {
-
 	/**
 	 * 
 	 */
@@ -47,7 +48,16 @@ public class Produit implements Serializable {
 	@ManyToOne
 	@JsonIgnore
 	private CategorieProduit categorieProduit;
-	
+	public Produit(String codeProduit, String libelleProduit, float prix, Date dateCreation,
+			Date dateDerniereModification) {
+<span class="nc" id="L53">		super();</span>
+<span class="nc" id="L54">		this.codeProduit = codeProduit;</span>
+<span class="nc" id="L55">		this.libelleProduit = libelleProduit;</span>
+<span class="nc" id="L56">		this.prix = prix;</span>
+<span class="nc" id="L57">		this.dateCreation = dateCreation;</span>
+<span class="nc" id="L58">		this.dateDerniereModification = dateDerniereModification;</span>
+<span class="nc" id="L59">	}</span>
+
 
 
 	

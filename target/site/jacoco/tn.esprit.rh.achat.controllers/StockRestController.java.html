@@ -4,6 +4,7 @@
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import tn.esprit.rh.achat.dto.DtoStock;
 import tn.esprit.rh.achat.entities.Stock;
 import tn.esprit.rh.achat.services.IStockService;
 
@@ -13,7 +14,7 @@ import java.util.List;
 @Api(tags = &quot;Gestion des stocks&quot;)
 @RequestMapping(&quot;/stock&quot;)
 @CrossOrigin(&quot;*&quot;)
-<span class="fc" id="L16">public class StockRestController {</span>
+<span class="fc" id="L17">public class StockRestController {</span>
 
 	@Autowired
 	IStockService stockService;
@@ -22,38 +23,41 @@ import java.util.List;
 	@GetMapping(&quot;/retrieve-all-stocks&quot;)
 	@ResponseBody
 	public List&lt;Stock&gt; getStocks() {
-<span class="nc" id="L25">		List&lt;Stock&gt; list = stockService.retrieveAllStocks();</span>
-<span class="nc" id="L26">		return list;</span>
+<span class="nc" id="L26">		List&lt;Stock&gt; list = stockService.retrieveAllStocks();</span>
+<span class="nc" id="L27">		return list;</span>
 	}
 
 	// http://localhost:8089/SpringMVC/stock/retrieve-stock/8
 	@GetMapping(&quot;/retrieve-stock/{stock-id}&quot;)
 	@ResponseBody
 	public Stock retrieveStock(@PathVariable(&quot;stock-id&quot;) Long stockId) {
-<span class="nc" id="L33">		return stockService.retrieveStock(stockId);</span>
+<span class="nc" id="L34">		return stockService.retrieveStock(stockId);</span>
 	}
 
 	// http://localhost:8089/SpringMVC/stock/add-stock
 	@PostMapping(&quot;/add-stock&quot;)
 	@ResponseBody
-	public Stock addStock(@RequestBody Stock s) {
-<span class="nc" id="L40">		Stock stock = stockService.addStock(s);</span>
-<span class="nc" id="L41">		return stock;</span>
+	public Stock addStock(@RequestBody DtoStock s) {
+<span class="nc" id="L41">		Stock stock = new Stock(s.getLibelleStock(),s.getQte(),s.getQteMin());</span>
+<span class="nc" id="L42">		return stockService.addStock(stock);</span>
 	}
 
 	// http://localhost:8089/SpringMVC/stock/remove-stock/{stock-id}
 	@DeleteMapping(&quot;/remove-stock/{stock-id}&quot;)
 	@ResponseBody
 	public void removeStock(@PathVariable(&quot;stock-id&quot;) Long stockId) {
-<span class="nc" id="L48">		stockService.deleteStock(stockId);</span>
-<span class="nc" id="L49">	}</span>
+<span class="nc" id="L49">		stockService.deleteStock(stockId);</span>
+<span class="nc" id="L50">	}</span>
 
 	// http://localhost:8089/SpringMVC/stock/modify-stock
 	@PutMapping(&quot;/modify-stock&quot;)
 	@ResponseBody
-	public Stock modifyStock(@RequestBody Stock stock) {
-<span class="nc" id="L55">		return stockService.updateStock(stock);</span>
+
+	public Stock modifyStock(@RequestBody DtoStock s) {
+<span class="nc" id="L57">		Stock stock = new Stock(s.getIdStock(),s.getLibelleStock(),s.getQte(),s.getQteMin(),s.getProduits());</span>
+<span class="nc" id="L58">		return stockService.updateStock(stock);</span>
 	}
+
 
 	/*
 	 * Spring Scheduler : Comparer QteMin tolérée (à ne pa dépasser) avec

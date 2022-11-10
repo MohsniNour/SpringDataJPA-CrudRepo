@@ -12,15 +12,17 @@ import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-<span class="nc" id="L20">@Getter</span>
-<span class="nc" id="L21">@Setter</span>
-<span class="nc" id="L22">@AllArgsConstructor</span>
-<span class="fc" id="L23">@NoArgsConstructor</span>
+<span class="pc" id="L21">@Getter</span>
+<span class="pc" id="L22">@Setter</span>
+<span class="pc" id="L23">@Builder</span>
+<span class="fc" id="L24">@AllArgsConstructor</span>
+<span class="fc" id="L25">@NoArgsConstructor</span>
 public class Operateur implements Serializable{
 	private static final long serialVersionUID = 1L;
 
@@ -34,6 +36,11 @@ public class Operateur implements Serializable{
 	@OneToMany
 	@JsonIgnore
 	private Set&lt;Facture&gt; factures;
+<span class="nc" id="L39">	public Operateur(String nom, String prenom, String password) {</span>
+<span class="nc" id="L40">		this.nom = nom;</span>
+<span class="nc" id="L41">		this.prenom = prenom;</span>
+<span class="nc" id="L42">		this.password = password;</span>
+<span class="nc" id="L43">	}</span>
 	
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
