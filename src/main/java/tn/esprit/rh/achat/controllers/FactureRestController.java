@@ -4,10 +4,7 @@ import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
-
-import tn.esprit.rh.achat.dto.DtoCategorieProduit;
 import tn.esprit.rh.achat.dto.DtoFacture;
-import tn.esprit.rh.achat.entities.CategorieProduit;
 import tn.esprit.rh.achat.entities.Facture;
 import tn.esprit.rh.achat.services.IFactureService;
 
