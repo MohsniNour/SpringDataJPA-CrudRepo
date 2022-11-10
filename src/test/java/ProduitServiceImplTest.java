@@ -19,11 +19,10 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@Slf4j
 @SpringBootTest(classes = AchatApplication.class)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @ExtendWith(MockitoExtension.class)
-public class ProduitServiceMockitoTest {
+public class ProduitServiceImplTest {
 	 @Mock
 	 ProduitRepository produitRepositoryMock;
 	 @InjectMocks
