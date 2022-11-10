@@ -26,10 +26,14 @@ services:
   springboot-be:
     depends_on:
       - mysql-db
-    image: nourmohsni/devopsproject:latest
-    container_name: springboot-be
-    env_file: ./.env
-    environment:
+  build:
+      context: "./"
+      dockerfile: "Dockerfile"
+  restart: on-failure
+  env_file: ./.env
+  image: nourmohsni/devopsproject:latest
+  container_name: springboot-be
+  environment:
       SPRING_APPLICATION_JSON: '{
         "spring.datasource.url"  : "jdbc:mysql://mysql-db:$MYSQLDB_DOCKER_PORT/$MYSQLDB_DATABASE?useSSL=false",
         "spring.datasource.username" : "$MYSQLDB_USER",
@@ -37,9 +41,16 @@ services:
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
         "spring.jpa.hibernate.ddl-auto" : "update"
       }'
-    ports:
+  ports:
       - $SPRING_LOCAL_PORT:$SPRING_DOCKER_PORT
-    restart: on-failure
+  restart: on-failure
+  volumes:
+      - .m2:/root/.m2
+  stdin_open: true
+  tty: true
 
 volumes:
   db:
+  
+  
+ 
