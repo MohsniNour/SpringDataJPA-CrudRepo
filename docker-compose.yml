@@ -42,4 +42,4 @@ services:
     restart: on-failure
 
 volumes:
-   mysql-db: { }
+   db:
