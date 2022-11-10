@@ -38,8 +38,8 @@ services:
         "spring.jpa.hibernate.ddl-auto" : "update",
       }'
     ports:
-      - $SPRING_LOCAL_PORT:$SPRING_DOCKER_PORT
+      - '8083:8083'
     restart: on-failure
 
 volumes:
-  db:
+   mysql-db: { }
