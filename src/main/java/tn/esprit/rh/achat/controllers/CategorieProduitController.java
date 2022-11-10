@@ -5,9 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.rh.achat.entities.CategorieProduit;
 import tn.esprit.rh.achat.dto.DtoCategorieProduit;
-import tn.esprit.rh.achat.dto.DtoSecteurActivite;
-import tn.esprit.rh.achat.entities.CategorieProduit;
-import tn.esprit.rh.achat.entities.SecteurActivite;
 import tn.esprit.rh.achat.services.ICategorieProduitService;
 
 import java.util.List;
