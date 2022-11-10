@@ -12,28 +12,35 @@ import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Getter
-<span class="nc" id="L21">@Setter</span>
-<span class="nc" id="L22">@AllArgsConstructor</span>
-<span class="nc" id="L23">@NoArgsConstructor</span>
+<span class="nc" id="L21">@Getter</span>
+<span class="nc" id="L22">@Setter</span>
+<span class="nc" id="L23">@Builder</span>
+<span class="nc" id="L24">@AllArgsConstructor</span>
+<span class="nc" id="L25">@NoArgsConstructor</span>
 public class Operateur implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-<span class="nc" id="L29">	private Long idOperateur;</span>
-<span class="nc" id="L30">	private String nom;</span>
-<span class="nc" id="L31">	private String prenom;</span>
+	private Long idOperateur;
+	private String nom;
+	private String prenom;
 	
-<span class="nc" id="L33">	private String password;</span>
+	private String password;
 	@OneToMany
 	@JsonIgnore
-<span class="nc" id="L36">	private Set&lt;Facture&gt; factures;</span>
+	private Set&lt;Facture&gt; factures;
+<span class="nc" id="L39">	public Operateur(String nom, String prenom, String password) {</span>
+<span class="nc" id="L40">		this.nom = nom;</span>
+<span class="nc" id="L41">		this.prenom = prenom;</span>
+<span class="nc" id="L42">		this.password = password;</span>
+<span class="nc" id="L43">	}</span>
 	
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

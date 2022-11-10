@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SecteurServiceMockitoTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">achat</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">SecteurServiceMockitoTest.java</span></div><h1>SecteurServiceMockitoTest.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">import java.util.ArrayList;</span>
+import java.util.List;
+import java.util.Optional;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import tn.esprit.rh.achat.AchatApplication;
+import tn.esprit.rh.achat.entities.SecteurActivite;
+import tn.esprit.rh.achat.repositories.SecteurActiviteRepository;
+import tn.esprit.rh.achat.services.SecteurActiviteServiceImpl;
+@ExtendWith(MockitoExtension.class)
+@SpringBootTest(classes = AchatApplication.class)
+
+<span class="nc" id="L23">public class SecteurServiceMockitoTest {</span>
+
+	@Mock
+	 SecteurActiviteRepository saRepositoryMock;
+	 @InjectMocks
+	 SecteurActiviteServiceImpl saService;
+
+
+<span class="nc" id="L31">	 SecteurActivite sa = SecteurActivite.builder().codeSecteurActivite(&quot;code1secteur&quot;)</span>
+<span class="nc" id="L32">             .libelleSecteurActivite(&quot;sect1&quot;)</span>
+<span class="nc" id="L33">             .build();</span>
+<span class="nc" id="L34">	 List&lt;SecteurActivite&gt; listSecteurs = new ArrayList&lt;SecteurActivite&gt;(){</span>
+	     {
+<span class="nc" id="L36">	         add(SecteurActivite.builder().codeSecteurActivite(&quot;code12secteur&quot;).libelleSecteurActivite(&quot;sect12&quot;).build());</span>
+<span class="nc" id="L37">	         add(SecteurActivite.builder().codeSecteurActivite(&quot;code13secteur&quot;).libelleSecteurActivite(&quot;sect13&quot;).build());</span>
+<span class="nc" id="L38">	         add(SecteurActivite.builder().codeSecteurActivite(&quot;code14secteur&quot;).libelleSecteurActivite(&quot;sect14&quot;).build());</span>
+<span class="nc" id="L39">	         add(SecteurActivite.builder().codeSecteurActivite(&quot;code15secteur&quot;).libelleSecteurActivite(&quot;sect15&quot;).build());</span>
+
+	     }
+	 };
+
+	 @Test
+	 public void testretrieveSecteur(){
+<span class="nc" id="L46">	     Mockito.when(saRepositoryMock.findById(Mockito.anyLong())).thenReturn(Optional.of(sa)); //find all</span>
+<span class="nc" id="L47">	     SecteurActivite sa1 = saService.retrieveSecteurActivite(2L);</span>
+<span class="nc" id="L48">	     Assertions.assertNotNull(sa1);</span>
+<span class="nc" id="L49">			System.out.println(&quot;woooorkiiiiing retrieve !&quot;);</span>
+
+
+<span class="nc" id="L52">	 }</span>
+	 @Test
+	 public void testaddSecteur() {
+<span class="nc" id="L55">	     Mockito.when(saRepositoryMock.save(sa)).thenReturn(sa);</span>
+<span class="nc" id="L56">	     SecteurActivite sa1 = saService.addSecteurActivite(sa);</span>
+<span class="nc" id="L57">	     Assertions.assertNotNull(sa1);</span>
+<span class="nc" id="L58">			System.out.println(&quot;woooorkiiiiing add !&quot;);</span>
+
+
+<span class="nc" id="L61">	 }</span>
+
+	 @Test
+	 public void testretrieveAllSecteurs() {
+<span class="nc" id="L65">	     Mockito.when(saRepositoryMock.findAll()).thenReturn(listSecteurs);</span>
+<span class="nc" id="L66">	     List&lt;SecteurActivite&gt; listSa = saService.retrieveAllSecteurActivite();</span>
+<span class="nc" id="L67">	     Assertions.assertNotNull(listSa);</span>
+<span class="nc" id="L68">			System.out.println(&quot;woooorkiiiiing all retrieve !&quot;);</span>
+
+<span class="nc" id="L70">	 }</span>
+
+
+
+	 @Test
+	 public void tesupdateSecteur() {
+<span class="nc" id="L76">		 sa.setCodeSecteurActivite(&quot;test&quot;);</span>
+<span class="nc" id="L77">	     Mockito.when(saRepositoryMock.save(sa)).thenReturn(sa);</span>
+<span class="nc" id="L78">	     SecteurActivite sa1 = saService.updateSecteurActivite(sa);</span>
+<span class="nc" id="L79">	     Assertions.assertEquals(sa1.getCodeSecteurActivite(),sa1.getCodeSecteurActivite());</span>
+<span class="nc" id="L80">			System.out.println(&quot;woooorkiiiiing update !&quot;);</span>
+
+
+<span class="nc" id="L83">	 }</span>
+
+	 @Test
+	 public void testdeleteSecteur() {
+<span class="nc" id="L87">		 SecteurActivite sa2 = SecteurActivite.builder().codeSecteurActivite(&quot;code12secteur&quot;).libelleSecteurActivite(&quot;sect12&quot;).build();</span>
+<span class="nc" id="L88">		 saService.deleteSecteurActivite(sa2.getIdSecteurActivite());</span>
+<span class="nc" id="L89">	     Mockito.verify(saRepositoryMock).deleteById(sa2.getIdSecteurActivite());</span>
+<span class="nc" id="L90">			System.out.println(&quot;woooorkiiiiing delete !&quot;);</span>
+
+
+<span class="nc" id="L93">	 }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

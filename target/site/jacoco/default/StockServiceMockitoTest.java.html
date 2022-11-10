@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StockServiceMockitoTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">achat</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">StockServiceMockitoTest.java</span></div><h1>StockServiceMockitoTest.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">import java.util.ArrayList;</span>
+import java.util.List;
+import java.util.Optional;
+
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import tn.esprit.rh.achat.AchatApplication;
+import tn.esprit.rh.achat.entities.Stock;
+import tn.esprit.rh.achat.repositories.StockRepository;
+import tn.esprit.rh.achat.services.StockServiceImpl;
+
+@ExtendWith(MockitoExtension.class)
+@SpringBootTest(classes = AchatApplication.class)
+<span class="nc" id="L24">public class StockServiceMockitoTest {</span>
+
+	@Mock
+	 StockRepository stockRepositoryMock;
+	 @InjectMocks
+	 StockServiceImpl stockService;
+
+
+<span class="nc" id="L32">	 Stock s = Stock.builder().libelleStock(&quot;stock1&quot;)</span>
+<span class="nc" id="L33">			 .qte(33)</span>
+<span class="nc" id="L34">             .build();</span>
+<span class="nc" id="L35">	 List&lt;Stock&gt; listStocks = new ArrayList&lt;Stock&gt;(){</span>
+	     {
+<span class="nc" id="L37">	         add(Stock.builder().libelleStock(&quot;stock12&quot;).build());</span>
+<span class="nc" id="L38">	         add(Stock.builder().libelleStock(&quot;stock13&quot;).build());</span>
+<span class="nc" id="L39">	         add(Stock.builder().libelleStock(&quot;stock14&quot;).build());</span>
+<span class="nc" id="L40">	         add(Stock.builder().libelleStock(&quot;stock15&quot;).build());</span>
+
+	     }
+	 };
+
+	 @Test
+	 public void testretrieveStock(){
+<span class="nc" id="L47">	     Mockito.when(stockRepositoryMock.findById(Mockito.anyLong())).thenReturn(Optional.of(s)); //find all</span>
+<span class="nc" id="L48">	     Stock s1 = stockService.retrieveStock(2L);</span>
+<span class="nc" id="L49">	     Assertions.assertNotNull(s1);</span>
+<span class="nc" id="L50">			System.out.println(&quot;working retrieve MOCKITO !&quot;);</span>
+
+
+<span class="nc" id="L53">	 }</span>
+	 @Test
+	 public void testaddStock() {
+<span class="nc" id="L56">	     Mockito.when(stockRepositoryMock.save(s)).thenReturn(s);</span>
+<span class="nc" id="L57">	     Stock s1 = stockService.addStock(s);</span>
+<span class="nc" id="L58">	     Assertions.assertNotNull(s1);</span>
+<span class="nc" id="L59">			System.out.println(&quot;working add MOCKITO !&quot;);</span>
+
+
+<span class="nc" id="L62">	 }</span>
+
+	 @Test
+	 public void testretrieveAllStocks() {
+<span class="nc" id="L66">	     Mockito.when(stockRepositoryMock.findAll()).thenReturn(listStocks);</span>
+<span class="nc" id="L67">	     List&lt;Stock&gt; listS = stockService.retrieveAllStocks();</span>
+<span class="nc" id="L68">	     Assertions.assertNotNull(listS);</span>
+<span class="nc" id="L69">			System.out.println(&quot;working all retrieve MOCKITO !&quot;);</span>
+
+<span class="nc" id="L71">	 }</span>
+
+
+
+	 @Test
+	 public void tesupdateStock() {
+<span class="nc" id="L77">		 s.setLibelleStock(&quot;stockMock&quot;);;</span>
+<span class="nc" id="L78">	     Mockito.when(stockRepositoryMock.save(s)).thenReturn(s);</span>
+<span class="nc" id="L79">	     Stock s1 = stockService.updateStock(s);</span>
+<span class="nc" id="L80">	     Assertions.assertEquals(s1.getLibelleStock(),s1.getLibelleStock());</span>
+<span class="nc" id="L81">			System.out.println(&quot;working update MOCKITO !&quot;);</span>
+
+
+<span class="nc" id="L84">	 }</span>
+
+	 @Test
+	 public void testdeleteOperateur() {
+<span class="nc" id="L88">		 Stock s2 = Stock.builder().libelleStock(&quot;stock12&quot;).build();</span>
+<span class="nc" id="L89">		 stockService.deleteStock(s2.getIdStock());</span>
+<span class="nc" id="L90">	     Mockito.verify(stockRepositoryMock).deleteById(s2.getIdStock());</span>
+<span class="nc" id="L91">			System.out.println(&quot;working delete MOCKITO !&quot;);</span>
+
+
+<span class="nc" id="L94">	 }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

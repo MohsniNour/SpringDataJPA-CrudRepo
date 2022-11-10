@@ -39,8 +39,7 @@ import java.util.List;
 
 	@Override
 	public CategorieProduit retrieveCategorieProduit(Long id) {
-<span class="nc" id="L42">		CategorieProduit categorieProduit = categorieProduitRepository.findById(id).orElse(null);</span>
-<span class="nc" id="L43">		return categorieProduit;</span>
+<span class="nc" id="L42">		return categorieProduitRepository.findById(id).orElse(null);</span>
 	}
 
 }

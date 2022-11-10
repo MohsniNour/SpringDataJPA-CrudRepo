@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FournisseurMockitoTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">achat</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">FournisseurMockitoTest.java</span></div><h1>FournisseurMockitoTest.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">import java.util.ArrayList;</span>
+import java.util.List;
+import java.util.Optional;
+import org.mockito.Mock;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.boot.test.context.SpringBootTest;
+import tn.esprit.rh.achat.AchatApplication; 
+import tn.esprit.rh.achat.entities.Fournisseur;
+import tn.esprit.rh.achat.repositories.FournisseurRepository;
+import tn.esprit.rh.achat.entities.CategorieFournisseur;
+import tn.esprit.rh.achat.services.FournisseurServiceImpl;
+
+@RunWith(MockitoJUnitRunner.class)
+@SpringBootTest(classes = AchatApplication.class)
+<span class="nc" id="L20">public class FournisseurMockitoTest {</span>
+
+
+	 @Mock
+	 FournisseurRepository fournisseurRepositoryMock;
+	 @InjectMocks
+	 FournisseurServiceImpl fournisseurService;
+
+
+<span class="nc" id="L29">	 Fournisseur fournisseur =</span>
+<span class="nc" id="L30">			 Fournisseur.builder() .code(&quot;CODE1&quot;) .libelle(&quot;LIB1&quot;)</span>
+<span class="nc" id="L31">			 .categorieFournisseur(CategorieFournisseur.ORDINAIRE) .build();</span>
+<span class="nc" id="L32">	 List&lt;Fournisseur&gt; listFournisseurs = new ArrayList&lt;Fournisseur&gt;(){</span>
+	     {
+<span class="nc" id="L34">	         add(Fournisseur.builder() .code(&quot;CODE2&quot;) .libelle(&quot;LIB2&quot;).categorieFournisseur(CategorieFournisseur.ORDINAIRE) .build());</span>
+<span class="nc" id="L35">	         add(Fournisseur.builder() .code(&quot;CODE3&quot;) .libelle(&quot;LIB3&quot;).categorieFournisseur(CategorieFournisseur.ORDINAIRE) .build());</span>
+<span class="nc" id="L36">	         add(Fournisseur.builder() .code(&quot;CODE4&quot;) .libelle(&quot;LIB4&quot;).categorieFournisseur(CategorieFournisseur.ORDINAIRE) .build());</span>
+<span class="nc" id="L37">	         add(Fournisseur.builder() .code(&quot;CODE5&quot;) .libelle(&quot;LIB5&quot;).categorieFournisseur(CategorieFournisseur.ORDINAIRE) .build());</span>
+	     }
+	 };
+
+	 @Test
+	 public void testretrieveFournisseur(){
+<span class="nc" id="L43">	     Mockito.when(fournisseurRepositoryMock.findById(Mockito.anyLong())).thenReturn(Optional.of(fournisseur)); //find all</span>
+<span class="nc" id="L44">	     Fournisseur f1 = fournisseurService.retrieveFournisseur(2L);</span>
+<span class="nc" id="L45">	     Assertions.assertNotNull(f1);</span>
+<span class="nc" id="L46">			System.out.println(&quot;wererey retrieve fournisseur tekhdem !&quot;);</span>
+<span class="nc" id="L47">	 }</span>
+	 @Test
+	 public void testaddfournisseur() {
+<span class="nc" id="L50">	     Mockito.when(fournisseurRepositoryMock.save(fournisseur)).thenReturn(fournisseur);</span>
+<span class="nc" id="L51">	     Fournisseur f1 = fournisseurService.addFournisseur(fournisseur);</span>
+<span class="nc" id="L52">	     Assertions.assertNotNull(f1);</span>
+<span class="nc" id="L53">			System.out.println(&quot;add fournisseur tekhdem !&quot;);</span>
+<span class="nc" id="L54">	 }</span>
+
+	 @Test
+	 public void testretrieveAllfournisseurs() {
+<span class="nc" id="L58">	     Mockito.when(fournisseurRepositoryMock.findAll()).thenReturn(listFournisseurs);</span>
+<span class="nc" id="L59">	     List&lt;Fournisseur&gt; listF = fournisseurService.retrieveAllFournisseurs();</span>
+<span class="nc" id="L60">	     Assertions.assertNotNull(listF);</span>
+<span class="nc" id="L61">			System.out.println(&quot;all retrieve tekhdem zeda !&quot;);</span>
+
+<span class="nc" id="L63">	 }</span>
+
+
+
+	 /*@Test
+	 public void testUpdateFournisseur() {
+	     fournisseur.setCode(&quot;CODE9&quot;);
+	     Mockito.when(fournisseurRepositoryMock.save(fournisseur)).thenReturn(fournisseur);
+	     Fournisseur f1 = fournisseurService.updateFournisseur(fournisseur);
+	     Assertions.assertEquals(fournisseur.getCode(),f1.getCode());
+		 System.out.println(&quot;update frounisseur wroks !&quot;);
+	 }*/
+
+	 @Test
+	 public void testdeletefournisseur() {
+<span class="nc" id="L78">	     Fournisseur f2 = Fournisseur.builder() .code(&quot;DelTest&quot;) .libelle(&quot;LibDelete&quot;)</span>
+<span class="nc" id="L79">				 .categorieFournisseur(CategorieFournisseur.ORDINAIRE) .build();</span>
+<span class="nc" id="L80">	     fournisseurService.deleteFournisseur(f2.getIdFournisseur());</span>
+<span class="nc" id="L81">	     Mockito.verify(fournisseurRepositoryMock).deleteById(f2.getIdFournisseur());</span>
+<span class="nc" id="L82">			System.out.println(&quot;delete fournisseur works !&quot;);</span>
+
+
+<span class="nc" id="L85">	 }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

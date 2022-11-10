@@ -3,6 +3,8 @@
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import tn.esprit.rh.achat.dto.DtoOperateur;
 import tn.esprit.rh.achat.entities.Operateur;
 import tn.esprit.rh.achat.services.IOperateurService;
 
@@ -11,8 +13,7 @@ import java.util.List;
 @RestController
 @Api(tags = &quot;Gestion des opérateurs&quot;)
 @RequestMapping(&quot;/operateur&quot;)
-@CrossOrigin(&quot;*&quot;)
-<span class="nc" id="L15">public class OperateurController {</span>
+<span class="nc" id="L16">public class OperateurController {</span>
 
 	@Autowired
 	IOperateurService operateurService;
@@ -21,8 +22,7 @@ import java.util.List;
 	@GetMapping(&quot;/retrieve-all-operateurs&quot;)
 	@ResponseBody
 	public List&lt;Operateur&gt; getOperateurs() {
-<span class="nc" id="L24">		List&lt;Operateur&gt; list = operateurService.retrieveAllOperateurs();</span>
-<span class="nc" id="L25">		return list;</span>
+<span class="nc" id="L25">		return operateurService.retrieveAllOperateurs();</span>
 	}
 
 	// http://localhost:8089/SpringMVC/operateur/retrieve-operateur/8
@@ -35,23 +35,24 @@ import java.util.List;
 	// http://localhost:8089/SpringMVC/operateur/add-operateur
 	@PostMapping(&quot;/add-operateur&quot;)
 	@ResponseBody
-	public Operateur addOperateur(@RequestBody Operateur op) {
-<span class="nc" id="L39">		Operateur operateur = operateurService.addOperateur(op);</span>
-<span class="nc" id="L40">		return operateur;</span>
+	public Operateur addOperateur(@RequestBody DtoOperateur op) {
+<span class="nc" id="L39">		Operateur operateur = new Operateur(op.getNom(),op.getPrenom(),op.getPassword());</span>
+<span class="nc" id="L40">		return operateurService.addOperateur(operateur);</span>
 	}
 
-	// http://localhost:8089/SpringMVC/operateur/remove-operateur/{operateur-id}
 	@DeleteMapping(&quot;/remove-operateur/{operateur-id}&quot;)
 	@ResponseBody
 	public void removeOperateur(@PathVariable(&quot;operateur-id&quot;) Long operateurId) {
-<span class="nc" id="L47">		operateurService.deleteOperateur(operateurId);</span>
-<span class="nc" id="L48">	}</span>
+<span class="nc" id="L46">		operateurService.deleteOperateur(operateurId);</span>
+<span class="nc" id="L47">	}</span>
 
 	// http://localhost:8089/SpringMVC/operateur/modify-operateur
 	@PutMapping(&quot;/modify-operateur&quot;)
 	@ResponseBody
-	public Operateur modifyOperateur(@RequestBody Operateur operateur) {
-<span class="nc" id="L54">		return operateurService.updateOperateur(operateur);</span>
+	public Operateur modifyOperateur(@RequestBody DtoOperateur op) {
+<span class="nc" id="L53">		Operateur operateur = new Operateur(op.getNom(),op.getPrenom(),op.getPassword());</span>
+
+<span class="nc" id="L55">		return operateurService.updateOperateur(operateur);</span>
 	}
 
 	

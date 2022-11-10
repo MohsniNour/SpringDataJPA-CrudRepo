@@ -3,6 +3,8 @@
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import tn.esprit.rh.achat.dto.DtoFournisseur;
 import tn.esprit.rh.achat.entities.Fournisseur;
 import tn.esprit.rh.achat.services.IFournisseurService;
 
@@ -12,7 +14,7 @@ import java.util.List;
 @RestController
 @Api(tags = &quot;Gestion des fournisseurss&quot;)
 @RequestMapping(&quot;/fournisseur&quot;)
-<span class="nc" id="L15">public class FournisseurRestController {</span>
+<span class="nc" id="L17">public class FournisseurRestController {</span>
 
 	@Autowired
 	IFournisseurService fournisseurService;
@@ -21,44 +23,44 @@ import java.util.List;
 	@GetMapping(&quot;/retrieve-all-fournisseurs&quot;)
 	@ResponseBody
 	public List&lt;Fournisseur&gt; getFournisseurs() {
-<span class="nc" id="L24">		List&lt;Fournisseur&gt; fournisseurs = fournisseurService.retrieveAllFournisseurs();</span>
-<span class="nc" id="L25">		return fournisseurs;</span>
+<span class="nc" id="L26">		return fournisseurService.retrieveAllFournisseurs();</span>
 	}
 
 	// http://localhost:8089/SpringMVC/fournisseur/retrieve-fournisseur/8
 	@GetMapping(&quot;/retrieve-fournisseur/{fournisseur-id}&quot;)
 	@ResponseBody
 	public Fournisseur retrieveFournisseur(@PathVariable(&quot;fournisseur-id&quot;) Long fournisseurId) {
-<span class="nc" id="L32">		return fournisseurService.retrieveFournisseur(fournisseurId);</span>
+<span class="nc" id="L33">		return fournisseurService.retrieveFournisseur(fournisseurId);</span>
 	}
 
 	// http://localhost:8089/SpringMVC/fournisseur/add-fournisseur
 	@PostMapping(&quot;/add-fournisseur&quot;)
 	@ResponseBody
-	public Fournisseur addFournisseur(@RequestBody Fournisseur f) {
-<span class="nc" id="L39">		Fournisseur fournisseur = fournisseurService.addFournisseur(f);</span>
-<span class="nc" id="L40">		return fournisseur;</span>
+	public Fournisseur addFournisseur(@RequestBody DtoFournisseur f) {
+<span class="nc" id="L40">		Fournisseur fournisseur = new Fournisseur(f.getCode(),f.getLibelle());</span>
+<span class="nc" id="L41">		return	fournisseurService.addFournisseur(fournisseur);</span>
 	}
 
 	// http://localhost:8089/SpringMVC/fournisseur/remove-fournisseur/{fournisseur-id}
 	@DeleteMapping(&quot;/remove-fournisseur/{fournisseur-id}&quot;)
 	@ResponseBody
 	public void removeFournisseur(@PathVariable(&quot;fournisseur-id&quot;) Long fournisseurId) {
-<span class="nc" id="L47">		fournisseurService.deleteFournisseur(fournisseurId);</span>
-<span class="nc" id="L48">	}</span>
+<span class="nc" id="L48">		fournisseurService.deleteFournisseur(fournisseurId);</span>
+<span class="nc" id="L49">	}</span>
 
 	// http://localhost:8089/SpringMVC/fournisseur/modify-fournisseur
 	@PutMapping(&quot;/modify-fournisseur&quot;)
 	@ResponseBody
-	public Fournisseur modifyFournisseur(@RequestBody Fournisseur fournisseur) {
-<span class="nc" id="L54">		return fournisseurService.updateFournisseur(fournisseur);</span>
+	public Fournisseur modifyFournisseur(@RequestBody DtoFournisseur f) {
+<span class="nc" id="L55">		Fournisseur fournisseur = new Fournisseur(f.getCode(),f.getLibelle());</span>
+<span class="nc" id="L56">		return fournisseurService.updateFournisseur(fournisseur);</span>
 	}
 
 	// http://localhost:8089/SpringMVC/fournisseur/assignSecteurActiviteToFournisseur/1/5
 		@PutMapping(value = &quot;/assignSecteurActiviteToFournisseur/{idSecteurActivite}/{idFournisseur}&quot;)
 		public void assignProduitToStock(@PathVariable(&quot;idSecteurActivite&quot;) Long idSecteurActivite, @PathVariable(&quot;idFournisseur&quot;) Long idFournisseur) {
-<span class="nc" id="L60">			fournisseurService.assignSecteurActiviteToFournisseur(idSecteurActivite, idFournisseur);</span>
-<span class="nc" id="L61">		}</span>
+<span class="nc" id="L62">			fournisseurService.assignSecteurActiviteToFournisseur(idSecteurActivite, idFournisseur);</span>
+<span class="nc" id="L63">		}</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

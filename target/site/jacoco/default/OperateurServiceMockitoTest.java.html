@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OperateurServiceMockitoTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">achat</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">OperateurServiceMockitoTest.java</span></div><h1>OperateurServiceMockitoTest.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">import java.util.ArrayList;</span>
+import java.util.List;
+import java.util.Optional;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.boot.test.context.SpringBootTest;
+import tn.esprit.rh.achat.AchatApplication;
+import tn.esprit.rh.achat.entities.Operateur;
+import tn.esprit.rh.achat.repositories.OperateurRepository;
+import tn.esprit.rh.achat.services.OperateurServiceImpl;
+
+@SpringBootTest(classes = AchatApplication.class)
+@ExtendWith(MockitoExtension.class)
+
+<span class="nc" id="L22">public class OperateurServiceMockitoTest {</span>
+	
+ @Mock
+ OperateurRepository operateurRepositoryMock;
+ @InjectMocks
+ OperateurServiceImpl operateurService;
+
+
+<span class="nc" id="L30"> Operateur op = Operateur.builder().nom(&quot;Gassab&quot;).prenom(&quot;Selma&quot;).password(&quot;root&quot;).build();</span>
+<span class="nc" id="L31"> List&lt;Operateur&gt; listOperateurs = new ArrayList&lt;Operateur&gt;(){</span>
+     {
+<span class="nc" id="L33">         add(Operateur.builder().nom(&quot;Soua&quot;).prenom(&quot;Amira&quot;).password(&quot;root&quot;).build());</span>
+<span class="nc" id="L34">         add(Operateur.builder().nom(&quot;Talhaoui&quot;).prenom(&quot;Hassen&quot;).password(&quot;root&quot;).build());</span>
+<span class="nc" id="L35">         add(Operateur.builder().nom(&quot;mohsni&quot;).prenom(&quot;nour&quot;).password(&quot;root&quot;).build());</span>
+<span class="nc" id="L36">         add(Operateur.builder().nom(&quot;Farhat&quot;).prenom(&quot;Sabaa&quot;).password(&quot;root&quot;).build());</span>
+
+     }
+
+ };
+
+ @Test
+ public void testretrieveOperateur(){
+<span class="nc" id="L44">     Mockito.when(operateurRepositoryMock.findById(Mockito.anyLong())).thenReturn(Optional.of(op)); //find all</span>
+<span class="nc" id="L45">     Operateur op1 = operateurService.retrieveOperateur(2L);</span>
+<span class="nc" id="L46">     Assertions.assertNotNull(op1);</span>
+<span class="nc" id="L47">		System.out.println(&quot;woooorkiiiiing retrieve !&quot;);</span>
+
+
+<span class="nc" id="L50"> }</span>
+ @Test
+ public void testaddOperateur() {
+<span class="nc" id="L53">     Mockito.when(operateurRepositoryMock.save(op)).thenReturn(op);</span>
+<span class="nc" id="L54">     Operateur op1 = operateurService.addOperateur(op);</span>
+<span class="nc" id="L55">     Assertions.assertNotNull(op1);</span>
+<span class="nc" id="L56">		System.out.println(&quot;woooorkiiiiing add !&quot;);</span>
+
+
+<span class="nc" id="L59"> }</span>
+
+ @Test
+ public void testretrieveAllOperateurs() {
+<span class="nc" id="L63">     Mockito.when(operateurRepositoryMock.findAll()).thenReturn(listOperateurs);</span>
+<span class="nc" id="L64">     List&lt;Operateur&gt; listOp = operateurService.retrieveAllOperateurs();</span>
+<span class="nc" id="L65">     Assertions.assertNotNull(listOp);</span>
+<span class="nc" id="L66">		System.out.println(&quot;woooorkiiiiing all retrieve !&quot;);</span>
+
+<span class="nc" id="L68"> }</span>
+
+
+
+ @Test
+ public void tesupdateOperateur() {
+<span class="nc" id="L74">     op.setPrenom(&quot;khalil&quot;);</span>
+<span class="nc" id="L75">     Mockito.when(operateurRepositoryMock.save(op)).thenReturn(op);</span>
+<span class="nc" id="L76">     Operateur op1 = operateurService.updateOperateur(op);</span>
+<span class="nc" id="L77">     Assertions.assertEquals(op.getPrenom(),op1.getPrenom());</span>
+<span class="nc" id="L78">		System.out.println(&quot;woooorkiiiiing update !&quot;);</span>
+
+
+<span class="nc" id="L81"> }</span>
+
+ @Test
+ public void testdeleteOperateur() {
+<span class="nc" id="L85">     Operateur op2 = Operateur.builder().nom(&quot;Farhat&quot;).prenom(&quot;Sabaa&quot;).password(&quot;root&quot;).build();</span>
+<span class="nc" id="L86">     operateurService.deleteOperateur(op2.getIdOperateur());</span>
+<span class="nc" id="L87">     Mockito.verify(operateurRepositoryMock).deleteById(op2.getIdOperateur());</span>
+<span class="nc" id="L88">		System.out.println(&quot;woooorkiiiiing delete !&quot;);</span>
+
+
+<span class="nc" id="L91"> }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

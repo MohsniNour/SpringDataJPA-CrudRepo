@@ -37,8 +37,7 @@ import java.util.List;
 
 	@Override
 	public SecteurActivite retrieveSecteurActivite(Long id) {
-<span class="nc" id="L40">		SecteurActivite secteurActivite = secteurActiviteRepository.findById(id).orElse(null);</span>
-<span class="nc" id="L41">		return secteurActivite;</span>
+<span class="nc" id="L40">		return secteurActiviteRepository.findById(id).orElse(null);</span>
 	}
 
 }

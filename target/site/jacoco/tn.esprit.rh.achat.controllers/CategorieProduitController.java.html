@@ -4,6 +4,7 @@ import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.rh.achat.entities.CategorieProduit;
+import tn.esprit.rh.achat.dto.DtoCategorieProduit;
 import tn.esprit.rh.achat.services.ICategorieProduitService;
 
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
 @RestController
 @Api(tags = &quot;Gestion des categories Produit&quot;)
 @RequestMapping(&quot;/categorieProduit&quot;)
-<span class="nc" id="L14">public class CategorieProduitController {</span>
+<span class="nc" id="L15">public class CategorieProduitController {</span>
 
 	@Autowired
 	ICategorieProduitService categorieProduitService;
@@ -20,8 +21,7 @@ import java.util.List;
 	@GetMapping(&quot;/retrieve-all-categorieProduit&quot;)
 	@ResponseBody
 	public List&lt;CategorieProduit&gt; getCategorieProduit() {
-<span class="nc" id="L23">		List&lt;CategorieProduit&gt; list = categorieProduitService.retrieveAllCategorieProduits();</span>
-<span class="nc" id="L24">		return list;</span>
+<span class="nc" id="L24">		return categorieProduitService.retrieveAllCategorieProduits();</span>
 	}
 
 	// http://localhost:8089/SpringMVC/categorieProduit/retrieve-categorieProduit/8
@@ -34,23 +34,25 @@ import java.util.List;
 	// http://localhost:8089/SpringMVC/categorieProduit/add-categorieProduit
 	@PostMapping(&quot;/add-categorieProduit&quot;)
 	@ResponseBody
-	public CategorieProduit addCategorieProduit(@RequestBody CategorieProduit cp) {
-<span class="nc" id="L38">		CategorieProduit categorieProduit = categorieProduitService.addCategorieProduit(cp);</span>
-<span class="nc" id="L39">		return categorieProduit;</span>
+	public CategorieProduit addCategorieProduit(@RequestBody DtoCategorieProduit cp) {
+<span class="nc" id="L38">		CategorieProduit categorieProduit = new CategorieProduit(cp.getCodeCategorie(),cp.getLibelleCategorie());</span>
+<span class="nc" id="L39">		return	categorieProduitService.addCategorieProduit(categorieProduit);</span>
 	}
 
-	// http://localhost:8089/SpringMVC/categorieProduit/remove-categorieProduit/{categorieProduit-id}
 	@DeleteMapping(&quot;/remove-categorieProduit/{categorieProduit-id}&quot;)
 	@ResponseBody
 	public void removeCategorieProduit(@PathVariable(&quot;categorieProduit-id&quot;) Long categorieProduitId) {
-<span class="nc" id="L46">		categorieProduitService.deleteCategorieProduit(categorieProduitId);</span>
-<span class="nc" id="L47">	}</span>
+<span class="nc" id="L45">		categorieProduitService.deleteCategorieProduit(categorieProduitId);</span>
+<span class="nc" id="L46">	}</span>
 
 	// http://localhost:8089/SpringMVC/categorieProduit/modify-categorieProduit
 	@PutMapping(&quot;/modify-categorieProduit&quot;)
 	@ResponseBody
-	public CategorieProduit modifyCategorieProduit(@RequestBody CategorieProduit categorieProduit) {
-<span class="nc" id="L53">		return categorieProduitService.updateCategorieProduit(categorieProduit);</span>
+
+	public CategorieProduit modifyCategorieProduit(@RequestBody DtoCategorieProduit categorieProduit) {
+<span class="nc" id="L53">		CategorieProduit categorieP = new CategorieProduit(categorieProduit.getCodeCategorie(),categorieProduit.getLibelleCategorie());</span>
+<span class="nc" id="L54">		return categorieProduitService.updateCategorieProduit(categorieP);</span>
+
 	}
 
 	

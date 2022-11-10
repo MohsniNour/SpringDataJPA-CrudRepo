@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ProduitServiceMockitoTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">achat</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">ProduitServiceMockitoTest.java</span></div><h1>ProduitServiceMockitoTest.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">import java.util.ArrayList;</span>
+import java.util.List;
+import java.util.Optional;
+
+import org.mockito.Mock;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import tn.esprit.rh.achat.AchatApplication;
+import tn.esprit.rh.achat.entities.Produit;
+import tn.esprit.rh.achat.repositories.ProduitRepository;
+import tn.esprit.rh.achat.services.ProduitServiceImpl;
+
+@ExtendWith(MockitoExtension.class)
+@SpringBootTest(classes = AchatApplication.class)
+<span class="nc" id="L23">public class ProduitServiceMockitoTest {</span>
+	 @Mock
+	 ProduitRepository produitRepositoryMock;
+	 @InjectMocks
+	 ProduitServiceImpl produitService;
+	 
+	 
+<span class="nc" id="L30">	 Produit op = Produit.builder().codeProduit(&quot;999&quot;).libelleProduit(&quot;Selma&quot;).prix(900f).build();</span>
+<span class="nc" id="L31">	 List&lt;Produit&gt; listOperateurs = new ArrayList&lt;Produit&gt;(){</span>
+	     {
+<span class="nc" id="L33">	         add(Produit.builder().codeProduit(&quot;888&quot;).libelleProduit(&quot;Amira&quot;).prix(800f).build());</span>
+<span class="nc" id="L34">	         add(Produit.builder().codeProduit(&quot;666&quot;).libelleProduit(&quot;nour&quot;).prix(600f).build());</span>
+<span class="nc" id="L35">	         add(Produit.builder().codeProduit(&quot;522&quot;).libelleProduit(&quot;sab&quot;).prix(500f).build());</span>
+<span class="nc" id="L36">	         add(Produit.builder().codeProduit(&quot;1000&quot;).libelleProduit(&quot;yass&quot;).prix(1000f).build());</span>
+
+	     }
+
+	 };
+	 
+	@Test
+	public void testretrieveAllProduits() {
+<span class="nc" id="L44">		 Mockito.when(produitRepositoryMock.findAll()).thenReturn(listOperateurs);</span>
+<span class="nc" id="L45">	     List&lt;Produit&gt; listOp = produitService.retrieveAllProduits();</span>
+<span class="nc" id="L46">	     Assertions.assertNotNull(listOp);</span>
+<span class="nc" id="L47">			System.out.println(&quot;woooorkiiiiing all retrieve !&quot;);</span>
+
+
+<span class="nc" id="L50">	}</span>
+
+	@Test
+	public void testretrieveProduit() {
+<span class="nc" id="L54">		Mockito.when(produitRepositoryMock.findById(Mockito.anyLong())).thenReturn(Optional.of(op)); //find all</span>
+<span class="nc" id="L55">	    Produit op1 = produitService.retrieveProduit(2L);</span>
+<span class="nc" id="L56">	    Assertions.assertNotNull(op1);</span>
+<span class="nc" id="L57">		System.out.println(&quot;woooorkiiiiing retrieve !&quot;);</span>
+<span class="nc" id="L58">	}</span>
+
+	@Test
+	public void testaddProduit() {
+<span class="nc" id="L62">		 Mockito.when(produitRepositoryMock.save(op)).thenReturn(op);</span>
+<span class="nc" id="L63">		 Produit op1 = produitService.addProduit(op);</span>
+<span class="nc" id="L64">	     Assertions.assertNotNull(op1);</span>
+<span class="nc" id="L65">			System.out.println(&quot;woooorkiiiiing add !&quot;);</span>
+
+<span class="nc" id="L67">	}</span>
+
+	@Test
+	public void testdeleteProduit() {
+<span class="nc" id="L71">		Produit op2 = Produit.builder().codeProduit(&quot;999&quot;).libelleProduit(&quot;Selma&quot;).prix(900f).build();</span>
+<span class="nc" id="L72">	     produitService.deleteProduit(op2.getIdProduit());</span>
+<span class="nc" id="L73">	     Mockito.verify(produitRepositoryMock).deleteById(op2.getIdProduit());</span>
+<span class="nc" id="L74">			System.out.println(&quot;woooorkiiiiing delete !&quot;);</span>
+
+<span class="nc" id="L76">	}</span>
+
+	@Test
+	public void testupdateProduit() {
+<span class="nc" id="L80">		op.setLibelleProduit(&quot;khalil&quot;);</span>
+<span class="nc" id="L81">	     Mockito.when(produitRepositoryMock.save(op)).thenReturn(op);</span>
+<span class="nc" id="L82">	     Produit op1 = produitService.updateProduit(op);</span>
+<span class="nc" id="L83">	     Assertions.assertEquals(op.getLibelleProduit(),op1.getLibelleProduit());</span>
+<span class="nc" id="L84">			System.out.println(&quot;woooorkiiiiing update !&quot;);</span>
+
+<span class="nc" id="L86">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

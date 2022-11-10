@@ -37,8 +37,7 @@ import java.util.List;
 
 	@Override
 	public Operateur retrieveOperateur(Long id) {
-<span class="nc" id="L40">		Operateur operateur = operateurRepository.findById(id).orElse(null);</span>
-<span class="nc" id="L41">		return operateur;</span>
+<span class="nc" id="L40">		return operateurRepository.findById(id).orElse(null);</span>
 	}
 
 }
