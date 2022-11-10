@@ -27,7 +27,7 @@ services:
   springboot-be:
     depends_on:
       - mysql-db
-    image: ideash25/devopsproject:45
+    image: nourmohsni/devopsproject
     container_name: springboot-be
     env_file: ./.env
     environment:
