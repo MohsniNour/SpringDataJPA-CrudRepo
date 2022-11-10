@@ -74,8 +74,6 @@ public class StockServiceMockitoTest {
 
 	 }
 
-
-
 	 @Test
 	 public void tesupdateStock() {
 		 s.setLibelleStock("stockMock");;
