@@ -16,7 +16,7 @@ import lombok.Setter;
 
 @Entity
 <span class="nc" id="L18">@Builder</span>
-<span class="nc" id="L19">@Getter</span>
+@Getter
 <span class="nc" id="L20">@Setter</span>
 <span class="nc" id="L21">@AllArgsConstructor</span>
 <span class="nc" id="L22">@NoArgsConstructor</span>
@@ -25,13 +25,13 @@ public class Stock implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idStock;
-	private String libelleStock;
-	private Integer qte;
-	private Integer qteMin;
+<span class="nc" id="L28">	private Long idStock;</span>
+<span class="nc" id="L29">	private String libelleStock;</span>
+<span class="nc" id="L30">	private Integer qte;</span>
+<span class="nc" id="L31">	private Integer qteMin;</span>
 	@OneToMany(mappedBy = &quot;stock&quot;)
 	@JsonIgnore
-	private Set&lt;Produit&gt; produits;
+<span class="nc" id="L34">	private Set&lt;Produit&gt; produits;</span>
 	public Stock(String libelleStock, Integer qte, Integer qteMin) {
 <span class="nc" id="L36">		super();</span>
 <span class="nc" id="L37">		this.libelleStock = libelleStock;</span>

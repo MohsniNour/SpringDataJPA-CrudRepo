@@ -6,7 +6,6 @@ C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\espri
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\AchatApplication.java
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoFournisseur.java
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\services\FournisseurServiceImpl.java
-C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\ProduitServiceMockitoTest.java
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\controllers\FactureRestController.java
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\services\StockServiceImpl.java
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\controllers\FournisseurRestController.java
@@ -17,8 +16,6 @@ C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\espri
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\controllers\CategorieProduitController.java
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\services\ICategorieProduitService.java
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\entities\Produit.java
-C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\OperateurServiceMockitoTest.java
-C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\StockServiceMockitoTest.java
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\controllers\ReglementRestController.java
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoReglement.java
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\entities\DetailFacture.java
@@ -38,7 +35,6 @@ C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\espri
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\entities\Fournisseur.java
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\services\ISecteurActiviteService.java
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\services\IFournisseurService.java
-C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\FournisseurMockitoTest.java
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\dto\DtoOperateur.java
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\repositories\FactureRepository.java
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\repositories\OperateurRepository.java
@@ -58,5 +54,4 @@ C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\espri
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\entities\Operateur.java
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\repositories\FournisseurRepository.java
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\controllers\StockRestController.java
-C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\SecteurServiceMockitoTest.java
 C:\Users\Hamza\Desktop\Work\DevOps\SpringDataJPA-CrudRepo\src\main\java\tn\esprit\rh\achat\services\IStockService.java

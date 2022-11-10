@@ -5,14 +5,14 @@ import lombok.Getter;
 import lombok.Setter;
 import tn.esprit.rh.achat.entities.Produit;
 
-<span class="nc" id="L8">@Getter</span>
+@Getter
 <span class="nc" id="L9">@Setter</span>
 public class DtoCategorieProduit {
 	
-	private Long idCategorieProduit;
-	private String codeCategorie;
-	private String libelleCategorie;
-	private Set&lt;Produit&gt; produits;
+<span class="nc" id="L12">	private Long idCategorieProduit;</span>
+<span class="nc" id="L13">	private String codeCategorie;</span>
+<span class="nc" id="L14">	private String libelleCategorie;</span>
+<span class="nc" id="L15">	private Set&lt;Produit&gt; produits;</span>
 	
 	public DtoCategorieProduit(String codeCategorie, String libelleCategorie) {
 <span class="nc" id="L18">		super();</span>

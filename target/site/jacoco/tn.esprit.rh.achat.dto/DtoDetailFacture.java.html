@@ -5,16 +5,16 @@ import lombok.Setter;
 import tn.esprit.rh.achat.entities.Facture;
 import tn.esprit.rh.achat.entities.Produit;
 
-<span class="nc" id="L8">@Getter</span>
+@Getter
 <span class="nc" id="L9">@Setter</span>
 public class DtoDetailFacture {
-	private Long idDetailFacture;
-	private Integer qteCommandee;
-	private float prixTotalDetail;
-	private Integer pourcentageRemise;
-	private float montantRemise;
-	private Produit produit;
-	Facture facture;
+<span class="nc" id="L11">	private Long idDetailFacture;</span>
+<span class="nc" id="L12">	private Integer qteCommandee;</span>
+<span class="nc" id="L13">	private float prixTotalDetail;</span>
+<span class="nc" id="L14">	private Integer pourcentageRemise;</span>
+<span class="nc" id="L15">	private float montantRemise;</span>
+<span class="nc" id="L16">	private Produit produit;</span>
+<span class="nc" id="L17">	Facture facture;</span>
 	
 	public DtoDetailFacture(Integer qteCommandee, float prixTotalDetail, Integer pourcentageRemise,
 			float montantRemise) {

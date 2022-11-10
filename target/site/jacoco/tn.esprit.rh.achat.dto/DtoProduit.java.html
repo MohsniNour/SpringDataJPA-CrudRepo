@@ -9,19 +9,19 @@ import tn.esprit.rh.achat.entities.CategorieProduit;
 import tn.esprit.rh.achat.entities.DetailFacture;
 import tn.esprit.rh.achat.entities.Stock;
 
-<span class="nc" id="L12">@Getter</span>
+@Getter
 <span class="nc" id="L13">@Setter</span>
 public class DtoProduit {
 	
-	private Long idProduit;
-	private String codeProduit;
-	private String libelleProduit;
-	private float prix;
-	private Date dateCreation;
-	private Date dateDerniereModification;
-	private Stock stock;
-	private Set&lt;DetailFacture&gt; detailFacture;
-	private CategorieProduit categorieProduit;
+<span class="nc" id="L16">	private Long idProduit;</span>
+<span class="nc" id="L17">	private String codeProduit;</span>
+<span class="nc" id="L18">	private String libelleProduit;</span>
+<span class="nc" id="L19">	private float prix;</span>
+<span class="nc" id="L20">	private Date dateCreation;</span>
+<span class="nc" id="L21">	private Date dateDerniereModification;</span>
+<span class="nc" id="L22">	private Stock stock;</span>
+<span class="nc" id="L23">	private Set&lt;DetailFacture&gt; detailFacture;</span>
+<span class="nc" id="L24">	private CategorieProduit categorieProduit;</span>
 	
 	public DtoProduit(String codeProduit, String libelleProduit, float prix, Date dateCreation,
 			Date dateDerniereModification) {

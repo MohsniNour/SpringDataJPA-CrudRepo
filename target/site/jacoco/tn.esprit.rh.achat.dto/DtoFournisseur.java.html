@@ -9,17 +9,17 @@ import tn.esprit.rh.achat.entities.DetailFournisseur;
 import tn.esprit.rh.achat.entities.Facture;
 import tn.esprit.rh.achat.entities.SecteurActivite;
 
-<span class="nc" id="L12">@Getter</span>
+@Getter
 <span class="nc" id="L13">@Setter</span>
 public class DtoFournisseur {
 	
-	private Long idFournisseur;
-	private String code;
-	private String libelle;
-	private CategorieFournisseur  categorieFournisseur;
-	private Set&lt;Facture&gt; factures;
-    private Set&lt;SecteurActivite&gt; secteurActivites;
-    private DetailFournisseur detailFournisseur;
+<span class="nc" id="L16">	private Long idFournisseur;</span>
+<span class="nc" id="L17">	private String code;</span>
+<span class="nc" id="L18">	private String libelle;</span>
+<span class="nc" id="L19">	private CategorieFournisseur  categorieFournisseur;</span>
+<span class="nc" id="L20">	private Set&lt;Facture&gt; factures;</span>
+<span class="nc" id="L21">    private Set&lt;SecteurActivite&gt; secteurActivites;</span>
+<span class="nc" id="L22">    private DetailFournisseur detailFournisseur;</span>
 	public DtoFournisseur(String code, String libelle, CategorieFournisseur categorieFournisseur) {
 <span class="nc" id="L24">		super();</span>
 <span class="nc" id="L25">		this.code = code;</span>

@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-<span class="nc" id="L18">@Getter</span>
+@Getter
 <span class="nc" id="L19">@Setter</span>
 <span class="nc" id="L20">@Builder</span>
 <span class="nc" id="L21">@AllArgsConstructor</span>
@@ -27,12 +27,12 @@ public class SecteurActivite implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idSecteurActivite;
-	private String codeSecteurActivite;
-	private String libelleSecteurActivite;
+<span class="nc" id="L30">	private Long idSecteurActivite;</span>
+<span class="nc" id="L31">	private String codeSecteurActivite;</span>
+<span class="nc" id="L32">	private String libelleSecteurActivite;</span>
 	@ManyToMany(mappedBy=&quot;secteurActivites&quot;)
 	@JsonIgnore
-	private Set&lt;Fournisseur&gt; fournisseurs;
+<span class="nc" id="L35">	private Set&lt;Fournisseur&gt; fournisseurs;</span>
 	public SecteurActivite(String codeSecteurActivite, String libelleSecteurActivite) {
 <span class="nc" id="L37">		super();</span>
 <span class="nc" id="L38">		this.codeSecteurActivite = codeSecteurActivite;</span>

@@ -22,7 +22,7 @@ import lombok.Setter;
 
 @Entity
 <span class="nc" id="L24">@Builder</span>
-<span class="nc" id="L25">@Getter</span>
+@Getter
 <span class="nc" id="L26">@Setter</span>
 <span class="nc" id="L27">@AllArgsConstructor</span>
 <span class="nc" id="L28">@NoArgsConstructor</span>
@@ -32,19 +32,19 @@ public class Fournisseur implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idFournisseur;
-	private String code;
-	private String libelle;
+<span class="nc" id="L35">	private Long idFournisseur;</span>
+<span class="nc" id="L36">	private String code;</span>
+<span class="nc" id="L37">	private String libelle;</span>
 	@Enumerated(EnumType.STRING)
-	private CategorieFournisseur  categorieFournisseur;
+<span class="nc" id="L39">	private CategorieFournisseur  categorieFournisseur;</span>
 	@OneToMany(mappedBy=&quot;fournisseur&quot;)
 	@JsonIgnore
-	private Set&lt;Facture&gt; factures;
+<span class="nc" id="L42">	private Set&lt;Facture&gt; factures;</span>
     @ManyToMany
     @JsonIgnore
-    private Set&lt;SecteurActivite&gt; secteurActivites;
+<span class="nc" id="L45">    private Set&lt;SecteurActivite&gt; secteurActivites;</span>
     @OneToOne(cascade= CascadeType.ALL,fetch=FetchType.EAGER)
-    private DetailFournisseur detailFournisseur;
+<span class="nc" id="L47">    private DetailFournisseur detailFournisseur;</span>
 	public Fournisseur(String code, String libelle) {
 <span class="nc" id="L49">		super();</span>
 <span class="nc" id="L50">		this.code = code;</span>

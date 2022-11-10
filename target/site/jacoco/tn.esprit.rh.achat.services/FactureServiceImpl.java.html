@@ -11,10 +11,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
-@Service
+<span class="nc bnc" id="L14" title="All 2 branches missed.">@Service</span>
 <span class="nc" id="L15">@Slf4j</span>
 @Transactional
-<span class="nc bnc" id="L17" title="All 2 branches missed.">public class FactureServiceImpl implements IFactureService {</span>
+<span class="nc" id="L17">public class FactureServiceImpl implements IFactureService {</span>
 
 	@Autowired
 	FactureRepository factureRepository;
@@ -34,7 +34,7 @@ import java.util.Set;
 <span class="nc" id="L34">		List&lt;Facture&gt; factures = (List&lt;Facture&gt;) factureRepository.findAll();</span>
 <span class="nc bnc" id="L35" title="All 2 branches missed.">		for (Facture facture : factures) {</span>
 <span class="nc" id="L36">			log.info(&quot; facture : &quot; + facture);</span>
-		}
+<span class="nc" id="L37">		}</span>
 <span class="nc" id="L38">		return factures;</span>
 	}
 
@@ -72,7 +72,7 @@ import java.util.Set;
 <span class="nc" id="L72">				detailFactureRepository.save(detail);</span>
 			}
 
-		}
+<span class="nc" id="L75">		}</span>
 <span class="nc" id="L76">		f.setMontantFacture(montantFacture);</span>
 <span class="nc" id="L77">		f.setMontantRemise(montantRemise);</span>
 <span class="nc" id="L78">		return f;</span>

@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-<span class="nc" id="L22">@Getter</span>
+@Getter
 <span class="nc" id="L23">@Setter</span>
 <span class="nc" id="L24">@Builder</span>
 <span class="nc" id="L25">@AllArgsConstructor</span>
@@ -31,23 +31,23 @@ public class Produit implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idProduit;
-	private String codeProduit;
-	private String libelleProduit;
-	private float prix;
+<span class="nc" id="L34">	private Long idProduit;</span>
+<span class="nc" id="L35">	private String codeProduit;</span>
+<span class="nc" id="L36">	private String libelleProduit;</span>
+<span class="nc" id="L37">	private float prix;</span>
 	@Temporal(TemporalType.DATE)
-	private Date dateCreation;
+<span class="nc" id="L39">	private Date dateCreation;</span>
 	@Temporal(TemporalType.DATE)
-	private Date dateDerniereModification;
+<span class="nc" id="L41">	private Date dateDerniereModification;</span>
 	@ManyToOne
 	@JsonIgnore
-	private Stock stock;
+<span class="nc" id="L44">	private Stock stock;</span>
 	@OneToMany(mappedBy = &quot;produit&quot;)
 	@JsonIgnore
-	private Set&lt;DetailFacture&gt; detailFacture;
+<span class="nc" id="L47">	private Set&lt;DetailFacture&gt; detailFacture;</span>
 	@ManyToOne
 	@JsonIgnore
-	private CategorieProduit categorieProduit;
+<span class="nc" id="L50">	private CategorieProduit categorieProduit;</span>
 	public Produit(String codeProduit, String libelleProduit, float prix, Date dateCreation,
 			Date dateDerniereModification) {
 <span class="nc" id="L53">		super();</span>
